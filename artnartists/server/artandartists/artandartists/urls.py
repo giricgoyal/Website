@@ -1,11 +1,12 @@
+# imports
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-
-admin.autodiscover()
-
 from rest_framework import routers
 from server import views
 
+admin.autodiscover()
+
+# router config
 router = routers.DefaultRouter()
 router.register(r'users',views.UserViewSet)
 router.register(r'useraccount',views.UserAccountViewSet)
@@ -13,6 +14,7 @@ router.register(r'artistaccount',views.ArtistAccountViewSet)
 router.register(r'useraccountinfo',views.UserAccountInfoViewSet)
 router.register(r'artistaccountinfo',views.ArtistAccountInfoViewSet)
 
+# url patterns
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'tutorial.views.home', name='home'),

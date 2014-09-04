@@ -1,6 +1,7 @@
+# imports
 from django.db import models
 
-# Create your models here.
+# user account model
 class UserAccount(models.Model):
 	username = models.CharField(max_length=24, blank=False, default='')
 	password = models.CharField(max_length=24, blank=False, default='')
@@ -11,6 +12,8 @@ class UserAccount(models.Model):
 	def __unicode__(self):
 		return self.username
 
+
+# use accountinfo model
 class UserAccountInfo(models.Model):
 	firstname = models.CharField(max_length=100, blank=False, default='')
 	lastname = models.CharField(max_length=100, blank=False, default='')
@@ -23,7 +26,7 @@ class UserAccountInfo(models.Model):
 	def __unicode__(self):
 		return self.username
 
-
+# artist account model
 class ArtistAccount(models.Model):
 	username = models.CharField(max_length=24, blank=False, default='')
 	password = models.CharField(max_length=24, blank=False, default='')
@@ -34,7 +37,7 @@ class ArtistAccount(models.Model):
 	def __unicode__(self):
 		return self.username
 
-
+# artist account info model
 class ArtistAccountInfo(models.Model):
 	firstname = models.CharField(max_length=100, blank=False, default='')
 	lastname = models.CharField(max_length=100, blank=False, default='')
