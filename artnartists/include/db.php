@@ -10,12 +10,10 @@
 		function get($serviceURL) {
 			$curl = curl_init();
 
-			$url = $serviceURL;
-
 			curl_setopt_array(
 				$curl,
 				array(
-					CURLOPT_URL => $url,
+					CURLOPT_URL => $serviceURL,
 					CURLOPT_POST => false,
 					CURLOPT_RETURNTRANSFER => true,
 					CURLOPT_USERPWD => $this->user . ':' . $this->password
@@ -35,61 +33,12 @@
 			    die('error occured: ' . $decoded->response->errormessage);
 			}
 			if ($decoded->{"count"} != 0) {
-				return $decoded->{"results"}[0]->{"password"};	
+				return $decoded;	
 			}
 			return null;
-			//var_dump($decoded);
+			
 		}
 
 
 	}
-	/*
-	class dbClass {
-		
-		// variables
-		private $user  = "admin";
-		private $pwd = "VspSmU5eDnzKPVVw";
-
-		// query variables
-		private $select = "Select * from";
-		
-		// create select qury
-		function createSelectQuery($tbl, $whr = "", $opc = "") {
-			return $this->select . " " . $tbl . " " . $whr . " " . $opc;
-		}
-
-		// conect to database
-		function connectToDB($host, $dbName) {
-			//create connection
-			$con = mysqli_connect($host, $this->user, $this->pwd, $dbName);
-
-			// check connection
-			if (mysqli_connect_errno()) {
-				echo "Failed to connect to MYSQL: " . mysqli_connect_error();
-			}
-			return $con;
-			debugToConsole($con);
-		} 
-
-		// get all data from a specified table
-		function getAllDataFromTable($con, $tableName) {
-			$selectQuery = $this->createSelectQuery($tableName);
-			$result = mysqli_query($con, $selectQuery);
-			return $result;
-		}
-
-		// get particular data from a specified table
-		function getSomeDataFromTable($con, $tableName, $whr) {
-			$selectQuery = $this->createSelectQuery($tableName, $whr);
-			$result = mysqli_query($con, $selectQuery);
-			return $result;
-		}
-
-		// disconnect from a database
-		function closeToDB($con) {
-			mysqli_close($con);
-		}
-
-	}	
-	*/
 ?>

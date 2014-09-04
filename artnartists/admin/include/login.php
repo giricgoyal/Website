@@ -1,22 +1,14 @@
 <?php
 	// variables
 	
-
-	// functions
-	/*
-	function updateCreds($uName, $pWord, $dbObj, $con, $databaseName, $userTable) {
-		
-		$result = $dbObj->getSomeDataFromTable($con, $userTable, "where u_name = '" . $uName . "';");
-		while ($row = mysqli_fetch_array($result)) {
-			if (($row['u_name'] == $uName) && ($row['u_pwd'] == $pWord)) {
+	function updateCreds($dbObj, $uname, $upwd) {
+		$result = $dbObj->get("http://127.0.0.1:8000/artistaccount/?username=" . $uname);
+		if ($result != null) {
+			$pwd = $result->{"results"}[0]->{"password"};
+			if ($pwd == $upwd) {
 				return True;
 			}
-		}	
+		}
 		return False;
-	}
-	*/
-	function updateCreds($dbObj) {
-		$result = $dbObj->get("http://127.0.0.1:8000/artistaccount/");
-		
 	}
 ?>

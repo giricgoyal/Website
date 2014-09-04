@@ -12,16 +12,12 @@
 
 
 	$dbObj = new dbClass();
-	//$con = $dbObj->connectToDB($SITE_IP, $databaseName);
-
-
-
+	
 	if ($_POST) {
 		if ($_POST["loginName"] != "" && $_POST["loginName"] != "") {
 			$name = $_POST["loginName"];
 			$pwd = $_POST["loginPassword"];
-			//$check = updateCreds($name, $pwd, $dbObj, $con, $databaseName, $userTable);
-			$check = updateCreds($dbObj);
+			$check = updateCreds($dbObj, $name, $pwd);
 			if ($check == True) {
 				setSession($name);
 				setAttempt(0);
@@ -29,7 +25,7 @@
 			else {
 				setAttempt(1);
 			}
-			//header("Location:" . $SITE_ADMIN_BASE_URL . "/index.php");
+			header("Location:" . $SITE_ADMIN_BASE_URL . "/index.php");
 		}
 	}
 

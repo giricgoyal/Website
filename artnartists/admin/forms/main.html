@@ -1,37 +1,65 @@
+	<script type="text/javascript">
+		function toggle(val) {
+			/*
+			if (val == "signup") {
+				document.getElementById("signup").removeAttribute("hidden");
+				document.getElementById("signin").setAttribute("hidden","hidden");
+			}
+			else {
+				document.getElementById("signin").removeAttribute("hidden");
+				document.getElementById("signup").setAttribute("hidden", "hidden");
+			}
+			*/
+		}
+	</script>
 	<body>
 		<form action="index.php" method="post"-->
 			<table>
-				<?php
-					if (getAttempts() != 0) {
-				?>
-					<tr>
-						<td><span>Invalid Username/Password!</span><br></td>
-					</tr>
-				<?php
-					}
-					if (getName() != "")  { ?>
+				<tr>
+					<td>
+						<a href = "" onclick="toggle('signup')">SignUp!</a>
+					</td>
+					<td>
+						<a href = "" onclick="toggle('signin')">SignIn!</a>
+					</td>
+				</tr>
+			</table>
+			<table id="signin" >
+				<div>
+					<?php
+						if (getName() != "")  { ?>
+							<tr>
+								<td>Welcome, <?php echo getName()?> | </td>
+								<td><a href=" <?php echo $SITE_ADMIN_INCLUDE ?>/logout.php">Logout</a></td>
+							</tr>
+					<?php 
+						}
+						else { 
+					?>
 						<tr>
-							<td>Welcome, <?php echo getName()?> | </td>
-							<td><a href=" <?php echo $SITE_ADMIN_INCLUDE ?>/logout.php">Logout</a></td>
+							<td>Username:</td>
+							<td><input type="text" name="loginName" id="loginName"></td>
 						</tr>
-				<?php 
-					}
-					else { 
-				?>
+						<tr>
+							<td>Password:</td>
+							<td><input type="password" name="loginPassword" id="loginPassword" ></td>
+						</tr>
+						<tr>
+							<td><button type="submit" value="submit">Submit</button></td>
+						</tr>
+					<?php 
+						}
+					?>
+				</div>
+			</table>
+			<table id="signup" >
+				<div>
 					<tr>
-						<td>Username:</td>
-						<td><input type="text" name="loginName" id="loginName" ></td>
+						<td>
+							sign up
+						</td>
 					</tr>
-					<tr>
-						<td>Password:</td>
-						<td><input type="password" name="loginPassword" id="loginPassword" ></td>
-					</tr>
-					<tr>
-						<td><button type="submit" value="submit">Submit</button></td>
-					</tr>
-				<?php 
-					}
-				?>
+				</div>
 			</table>
 		</form-->
 	</body>
