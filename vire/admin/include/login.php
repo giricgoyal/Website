@@ -1,12 +1,14 @@
 <?php
 	// variables
 	
-
-	// functions
-	function updateCreds($un, $pw) {
-		$uName = $un;
-		$pWord = $pw;
-		setSession($uName);
+	function updateCreds($dbObj, $uname, $upwd) {
+		$result = $dbObj->get("http://127.0.0.1:8000/artistaccount/?username=" . $uname);
+		if ($result != null) {
+			$pwd = $result->{"results"}[0]->{"password"};
+			if ($pwd == $upwd) {
+				return True;
+			}
+		}
+		return False;
 	}
-
 ?>

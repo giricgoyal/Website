@@ -3,9 +3,11 @@
 
 	$_SESSION 			=	array();
 
-	$SITE_NAME			=	"sessionTest";
 
-	$SITE_ADDR = "localhost/" . $SITE_NAME;
+	$SITE_NAME			=	"vire";
+
+	$SITE_IP = "localhost";
+	$SITE_ADDR = $SITE_IP . "/" . $SITE_NAME;
 
 	if ($_SERVER['SERVER_NAME'] != "localhost") {
 		$SITE_ADDR = $_SERVER['SERVER_NAME'] . "/" . $SITE_NAME;
@@ -29,5 +31,9 @@
 	$SITE_ADMIN_BASE_URL		=	$SITE_BASE_URL . "/admin";
 	$SITE_ADMIN_INCLUDE_URL		=	$SITE_ADMIN_BASE_URL . "/include";
 
+
+	// db
+	$databaseName = "testDB";
+	$userTable = "testtable1";
 
 ?>
