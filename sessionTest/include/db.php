@@ -34,8 +34,10 @@
 			if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
 			    die('error occured: ' . $decoded->response->errormessage);
 			}
-			echo 'response ok!';
-			echo $decoded->{"results"}[0]->{"username"};
+			if ($decoded->{"count"} != 0) {
+				echo $decoded->{"results"}[0]->{"username"};	
+			}
+			echo "No Results!";
 			//var_dump($decoded);
 		}
 

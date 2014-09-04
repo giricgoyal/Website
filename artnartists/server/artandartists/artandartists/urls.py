@@ -10,6 +10,8 @@ router = routers.DefaultRouter()
 router.register(r'users',views.UserViewSet)
 router.register(r'useraccount',views.UserAccountViewSet)
 router.register(r'artistaccount',views.ArtistAccountViewSet)
+router.register(r'useraccountinfo',views.UserAccountInfoViewSet)
+router.register(r'artistaccountinfo',views.ArtistAccountInfoViewSet)
 
 urlpatterns = patterns('',
     # Examples:

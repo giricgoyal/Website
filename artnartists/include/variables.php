@@ -4,7 +4,7 @@
 	$_SESSION 			=	array();
 
 
-	$SITE_NAME			=	"sessionTest";
+	$SITE_NAME			=	"artnartists";
 
 	$SITE_IP = "localhost";
 	$SITE_ADDR = $SITE_IP . "/" . $SITE_NAME;

@@ -3,9 +3,9 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.contrib.auth.models import User, Group
-from server.models import UserAccount, ArtistAccount
-from rest_framework import viewsets
-from server.serializers import UserSerializer, UserAccountSerializer, ArtistAccountSerializer
+from server.models import UserAccount, UserAccountInfo, ArtistAccount, ArtistAccountInfo
+from rest_framework import viewsets, filters
+from server.serializers import UserSerializer, UserAccountSerializer, UserAccountInfoSerializer, ArtistAccountSerializer, ArtistAccountInfoSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = User.objects.all()
@@ -23,10 +23,25 @@ class UserViewSet(viewsets.ModelViewSet):
 class UserAccountViewSet(viewsets.ModelViewSet):
 	queryset = UserAccount.objects.all()
 	serializer_class = UserAccountSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_fields = ('username', 'password')
 
 class ArtistAccountViewSet(viewsets.ModelViewSet):
 	queryset = ArtistAccount.objects.all()
 	serializer_class = ArtistAccountSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_fields = ('username', 'password')
 
+class UserAccountInfoViewSet(viewsets.ModelViewSet):
+	queryset = UserAccountInfo.objects.all()
+	serializer_class = UserAccountInfoSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_fields = ('firstname', 'lastname', 'username', 'datetimejoined')
+
+class ArtistAccountInfoViewSet(viewsets.ModelViewSet):
+	queryset = ArtistAccountInfo.objects.all()
+	serializer_class = ArtistAccountInfoSerializer
+	filter_backends = (filters.DjangoFilterBackend,)
+	filter_fields = ('firstname', 'lastname', 'username', 'datetimejoined')
 
 
