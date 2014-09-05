@@ -4,10 +4,24 @@
 		<?php echo $SITE_NAME ?>
 	</title>
 
+	<link href="<?php echo $SITE_CSS_URL ?>/headerstyles.css" type="text/css" rel="stylesheet">
+	
 	<head>
-		<h1>
-			Welcome to <?php echo $SITE_NAME?>!
-		</h1>
-		<a href = "<?php echo $SITE_BASE_URL ?>/index.php">Home</a> | 
-		<a href = "<?php echo $SITE_ADMIN_BASE_URL ?>/index.php">Admin</a>
+		<table class="headTable">
+			<tr>
+				<td>
+					<h1>
+						Welcome to <?php echo $SITE_NAME?>!
+					</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href = "<?php echo $SITE_BASE_URL ?>/index.php">Home</a>
+				</td>
+				<td>
+					<a href = "<?php echo $SITE_LOGIN_BASE_URL ?>/index.php">Login</a>
+				</td>
+			</tr>
+		</table>
 	</head>

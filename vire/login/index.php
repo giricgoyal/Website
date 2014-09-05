@@ -3,12 +3,12 @@
 	include $SITE_INCLUDE . "/session.php";
 	include $SITE_INCLUDE . "/db.php";
 
-	include $SITE_ADMIN_INCLUDE . "/login.php";
+	include $SITE_LOGIN_INCLUDE . "/login.php";
 
 
 	include $SITE_FORMS . "/header.html";
-	include $SITE_ADMIN_FORMS . "/header.html";
-	include $SITE_ADMIN_FORMS . "/main.html";
+	include $SITE_LOGIN_FORMS . "/header.html";
+	include $SITE_LOGIN_FORMS . "/main.html";
 
 
 	$dbObj = new dbClass();
@@ -25,7 +25,7 @@
 			else {
 				setAttempt(1);
 			}
-			header("Location:" . $SITE_ADMIN_BASE_URL . "/index.php");
+			header("Location:" . $SITE_LOGIN_BASE_URL . "/index.php");
 		}
 	}
 

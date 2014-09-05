@@ -18,22 +18,20 @@
 	$SITE_INCLUDE 		= 	$SITE_BASE . "/include";
 	$SITE_FORMS			=	$SITE_BASE . "/forms";
 
-	$SITE_ADMIN_BASE		=	$SITE_BASE . $SITE_NAME . "/admin";
-	$SITE_ADMIN_INCLUDE		=	"include";
-	$SITE_ADMIN_FORMS		=	"forms";
-
+	$SITE_LOGIN_BASE		=	$SITE_BASE . $SITE_NAME . "/login";
+	$SITE_LOGIN_INCLUDE		=	"include";
+	$SITE_LOGIN_FORMS		=	"forms";
+	
 
 	// URLs
 
 	$SITE_BASE_URL 		= 	"http://" . $SITE_ADDR;
-	$SITE_INCLUDE_URL 	=	 $SITE_BASE_URL . "/include";
+	$SITE_INCLUDE_URL 	=	$SITE_BASE_URL . "/include";
+	$SITE_CSS_URL 		=	$SITE_BASE_URL . "/css";
 
-	$SITE_ADMIN_BASE_URL		=	$SITE_BASE_URL . "/admin";
-	$SITE_ADMIN_INCLUDE_URL		=	$SITE_ADMIN_BASE_URL . "/include";
+	$SITE_LOGIN_BASE_URL		=	$SITE_BASE_URL . "/login";
+	$SITE_LOGIN_INCLUDE_URL		=	$SITE_LOGIN_BASE_URL . "/include";
+	$SITE_LOGIN_CSS_URL			=	$SITE_LOGIN_BASE_URL . "/css";
 
-
-	// db
-	$databaseName = "testDB";
-	$userTable = "testtable1";
 
 ?>
