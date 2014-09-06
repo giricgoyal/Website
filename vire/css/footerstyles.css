@@ -1,8 +1,17 @@
 .footerTable {
-	width: 90%;
-	max-width: 1000px;
-	min-width: 900px;
-	border: 1px black solid;
+	width: 100%;
+	min-width: 950px;
 	margin-right: auto;
 	margin-left: auto;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+}
+
+.footerTableRow {
+	height: 30px;
+}
+
+.footerText1 {
+	font-size: 0.6em;
 }

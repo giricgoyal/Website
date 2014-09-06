@@ -10,7 +10,7 @@
 	function setSession($nm) {
 		global $name;
 
-		$_SESSION["name"] = $nm;
+		$_SESSION["username"] = $nm;
 		$name = $nm;
 	}
 
@@ -21,8 +21,8 @@
 
 	function getSessionName() {
 		global $name;
-		if (isset($_SESSION["name"])) {
-			return $_SESSION["name"];
+		if (isset($_SESSION["username"])) {
+			return $_SESSION["username"];
 		}
 		else {
 			return $name;	
@@ -47,9 +47,18 @@
 		}
 	}
 
+	function setUserInfo($result) {
+		$_SESSION["firstname"] = $result->{"results"}[0]->{"firstname"};
+		$_SESSION["lastname"] = $result->{"results"}[0]->{"lastname"};
+	}
+
+	function getUserName() {
+		return $_SESSION["firstname"] . " " . $_SESSION["lastname"];
+	}
+
 	session_start();
-	if (isset($_SESSION["name"])) {
-		$name = $_SESSION["name"];
+	if (isset($_SESSION["username"])) {
+		$name = $_SESSION["username"];
 	}
 	else {
 		$name = "";	

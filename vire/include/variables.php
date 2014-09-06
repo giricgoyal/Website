@@ -18,9 +18,8 @@
 	$SITE_INCLUDE 		= 	$SITE_BASE . "/include";
 	$SITE_FORMS			=	$SITE_BASE . "/forms";
 
-	$SITE_LOGIN_BASE		=	$SITE_BASE . $SITE_NAME . "/login";
-	$SITE_LOGIN_INCLUDE		=	"include";
-	$SITE_LOGIN_FORMS		=	"forms";
+	$SITE_ACCOUNT_BASE		=	$SITE_BASE . "/account";
+	$SITE_ACCOUNT_FORMS		=	$SITE_ACCOUNT_BASE . "/forms";
 	
 
 	// URLs
@@ -29,9 +28,9 @@
 	$SITE_INCLUDE_URL 	=	$SITE_BASE_URL . "/include";
 	$SITE_CSS_URL 		=	$SITE_BASE_URL . "/css";
 
-	$SITE_LOGIN_BASE_URL		=	$SITE_BASE_URL . "/login";
-	$SITE_LOGIN_INCLUDE_URL		=	$SITE_LOGIN_BASE_URL . "/include";
-	$SITE_LOGIN_CSS_URL			=	$SITE_LOGIN_BASE_URL . "/css";
+	$SITE_ACCOUNT_BASE_URL		=	$SITE_BASE_URL . "/account";
+	$SITE_ACCOUNT_INCLUDE_URL	=	$SITE_ACCOUNT_BASE_URL . "/include";
+	$SITE_ACCOUNT_CSS_URL		=	$SITE_ACCOUNT_BASE_URL . "/css";
 
 
 ?>

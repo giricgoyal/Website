@@ -1,26 +1,41 @@
+	
 <!DOCTYPE html>
-<html>
+<html class="font">
 	<title>
 		<?php echo $SITE_NAME ?>
 	</title>
 
 	<link href="<?php echo $SITE_CSS_URL ?>/headerstyles.css" type="text/css" rel="stylesheet">
-	
+	<link href="<?php echo $SITE_CSS_URL ?>/colorScheme.css" type="text/css" rel="stylesheet">
 	<head>
-		<table class="headTable">
-			<tr>
+		<table class="headTable mainColor">
+			<tr class="headerTableRow">
 				<td>
-					<h1>
-						Welcome to <?php echo $SITE_NAME?>!
-					</h1>
+					
 				</td>
 			</tr>
-			<tr>
-				<td>
-					<a href = "<?php echo $SITE_BASE_URL ?>/index.php">Home</a>
+		</table>
+		<table class="headerTable">
+			<tr class="headerTableRow">
+				<td class="headerTableColumnLeft">
+					ViRe <span class="subheaderText">powered by Elecktric</span>
 				</td>
-				<td>
-					<a href = "<?php echo $SITE_LOGIN_BASE_URL ?>/index.php">Login</a>
+				<td class="headerTableColumnRight">
+					<?php
+						if (getSessionName() != "") {
+					?>
+
+						<ul>
+							<li><?php echo getUserName(); ?>
+								<ul>
+									<a href=""><li>Account</li></a>
+									<a href="<?php echo $SITE_INCLUDE_URL ?>/logout.php"><li>Logout</li></a>
+								</ul>
+							</li>
+						</ul>
+					<?php
+						}
+					?>
 				</td>
 			</tr>
 		</table>
