@@ -20,7 +20,7 @@ class UserAccountViewSet(viewsets.ModelViewSet):
 	serializer_class = UserAccountSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('username', 'password') # specify filter fields
+	filter_fields = ('userid', 'username', 'password', 'userids') # specify filter fields
 
 # user account info view set
 class UserAccountInfoViewSet(viewsets.ModelViewSet):
@@ -28,6 +28,6 @@ class UserAccountInfoViewSet(viewsets.ModelViewSet):
 	serializer_class = UserAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('firstname', 'lastname', 'username', 'datetimejoined') # specify filter fields
+	filter_fields = ('account', 'firstname', 'lastname', 'datetimejoined') # specify filter fields
 
 

@@ -12,6 +12,7 @@
 
 		$_SESSION["username"] = $nm;
 		$name = $nm;
+		setcookie("user",$nm, time()+60*60*24*30);
 	}
 
 	function destroySession() {
@@ -29,24 +30,6 @@
 		}
 	}
 
-	function setAttempt($val) {
-		if ($val == 0) {
-			$_SESSION["attempts"] = $val;
-		}
-		else {
-			$_SESSION["attempts"] = $_SESSION["attempts"] + 1;
-		}
-	}
-
-	function getAttempts() {
-		if (isset($_SESSION["attempts"])) {
-			return $_SESSION["attempts"];
-		}
-		else {
-			return 0;
-		}
-	}
-
 	function setUserInfo($result) {
 		$_SESSION["firstname"] = $result->{"results"}[0]->{"firstname"};
 		$_SESSION["lastname"] = $result->{"results"}[0]->{"lastname"};
@@ -56,11 +39,20 @@
 		return $_SESSION["firstname"] . " " . $_SESSION["lastname"];
 	}
 
-	session_start();
-	if (isset($_SESSION["username"])) {
-		$name = $_SESSION["username"];
+	function getUser() {
+		if (isset($_COOKIE["user"])) {
+			return $_COOKIE["user"];
+		}
+		return "";
 	}
-	else {
-		$name = "";	
+
+	function startSession() {
+		session_start();
+		if (isset($_SESSION["username"])) {
+			$name = $_SESSION["username"];
+		}
+		else {
+			$name = "";	
+		}
 	}
 ?>

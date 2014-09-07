@@ -15,17 +15,24 @@
 								</tr>
 								<tr class="loginRow">
 									<td colspan="2">
-										<input class="loginInput" type="text" name="loginName" id="loginName" placeholder="Username or email">
+										<div> 
+											<span id="invalidText" class="invalidDetails">Invalid username/password</span>
+										</div>
 									</td>
 								</tr>
 								<tr class="loginRow">
 									<td colspan="2">
-										<input class="loginInput" type="password" name="loginPassword" id="loginPassword" placeholder="Password"  >
+										<input class="textInput" type="text" name="loginName" id="loginName" placeholder="Username or email or phone number" value="<?php echo getUser() ?>" >
 									</td>
 								</tr>
 								<tr class="loginRow">
 									<td colspan="2">
-										<input class="loginRememberMe" type="checkbox" name="remember me" id="loginRememberMe" placeholder="loginRememberMe"><span class="rememberMeText">Remember me</span>
+										<input class="textInput" type="password" name="loginPassword" id="loginPassword" placeholder="Password" >
+									</td>
+								</tr>
+								<tr class="loginRow">
+									<td colspan="2">
+										<input class="loginRememberMe" type="checkbox" name="loginRememberMe" id="loginRememberMe" placeholder="loginRememberMe"><span class="rememberMeText">&nbspKeep me logged in</span>
 									</td>
 								</tr>
 								<tr class="loginRow">
@@ -45,20 +52,26 @@
 									<td colspan="2">
 										Not ViRe'd yet? Register now!
 									</td>
-								</tr class="signupRow">
+								</tr>
+								<tr class="loginRow">
+									<td colspan="2">
+										<div> </div>
+									</td>
+								</tr>
+								<tr class="signupRow">
 									<td>
-										<input class="signupInput" type="text" name="signupFirstName" id="signupFirstName" placeholder="First Name">
+										<input class="textInput" type="text" name="signupFirstName" id="signupFirstName" placeholder="First Name">
 									</td>
 									<td>
-										<input class="signupInput" type="text" name="signupLastName" id="signupLastName" placeholder="Last Name">
+										<input class="textInput" type="text" name="signupLastName" id="signupLastName" placeholder="Last Name">
 									</td>
 								</tr class="signupRow">
 									<td colspan="2">
-										<input class="signupInput" type="text" name="signupEmail" id="signupEmail" placeholder="Email">
+										<input class="textInput" type="text" name="signupEmail" id="signupEmail" placeholder="Email">
 									</td>
 								</tr class="signupRow">
 									<td colspan="2">
-										<input class="signupInput" type="password" name="signupPassword" id="signupPassword" placeholder="Password">
+										<input class="textInput" type="password" name="signupPassword" id="signupPassword" placeholder="Password">
 									</td>
 								<tr>
 								</tr class="signupRow">

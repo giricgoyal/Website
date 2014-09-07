@@ -1,11 +1,18 @@
-.footerTable {
+.footTable {
 	width: 100%;
-	min-width: 950px;
 	margin-right: auto;
 	margin-left: auto;
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
+}
+.footerTable {
+	width: 99.5%;
+	min-width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	position: fixed;
+	bottom: 0px;
 }
 
 .footerTableRow {

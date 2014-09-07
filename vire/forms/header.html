@@ -7,11 +7,11 @@
 
 	<link href="<?php echo $SITE_CSS_URL ?>/headerstyles.css" type="text/css" rel="stylesheet">
 	<link href="<?php echo $SITE_CSS_URL ?>/colorScheme.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $SITE_CSS_URL ?>/dropdownAccount.css" type="text/css" rel="stylesheet">
 	<head>
 		<table class="headTable mainColor">
 			<tr class="headerTableRow">
 				<td>
-					
 				</td>
 			</tr>
 		</table>
@@ -24,15 +24,7 @@
 					<?php
 						if (getSessionName() != "") {
 					?>
-
-						<ul>
-							<li><?php echo getUserName(); ?>
-								<ul>
-									<a href=""><li>Account</li></a>
-									<a href="<?php echo $SITE_INCLUDE_URL ?>/logout.php"><li>Logout</li></a>
-								</ul>
-							</li>
-						</ul>
+						<?php include $SITE_FORMS . "/dropdownAccount.html"; ?>
 					<?php
 						}
 					?>
