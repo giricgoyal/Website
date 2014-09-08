@@ -5,9 +5,24 @@
 	</title>
 
 	<head>
-		<h1>
-			Welcome to <?php echo $SITE_NAME?>!
-		</h1>
-		<a href = "<?php echo $SITE_BASE_URL ?>/index.php">Home</a> | 
-		<a href = "<?php echo $SITE_ADMIN_BASE_URL ?>/index.php">Admin</a>
+		<header>
+		<table class="headertable" cellpadding="10" cellspacing="15">
+			
+			<tr>
+
+				<!--<th> <img src="image/kittu.jpg" width="100" height="100" /></th>-->
+
+				<th class="tabs"><a href="<?php echo $SITE_BASE_URL?>/index.php" class="button"><b>Art<b></a></th>
+				<th class="tabs"><a href="<?php echo $SITE_ARTIST_BASE_URL?>/index.php" class="button"><b>Artist<b></a></th>
+				<th class="tabs"><a href="<?php echo $SITE_SHOP_BASE_URL?>/index.php" class="button"><b>Shop<b></a></th>
+				<th class="tabs"><a href="" class="button"><i>MyCart<i></a></th>
+			</tr>
+			<tr>
+				
+				</tr>
+		 
+
+		</table>
+    </header>
+		
 	</head>

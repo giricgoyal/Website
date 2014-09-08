@@ -1,0 +1,78 @@
+body,footer,h1,nav
+
+body
+{
+	font-family: arial;
+	background-image: url("image/backgroundimage.jpg");
+	padding: 10px;
+}
+.headertable
+{
+	padding: 10px 20px 20px 10px;
+	width: 80%;
+	height: 80px;
+	border: 0px solid white;
+	font-family: arial;
+	color: #ffffff;
+	
+	
+}
+h1
+{
+	
+}
+
+footer 
+{
+font-family: arial;
+clear: both;
+color: #ffffff;
+height: 30px;
+font-size: 80%;
+padding: 100px 20px 20px 50px;
+vertical-align: bottom;
+	
+	-webkit-column-count: 3;
+	-webkit-column-gap: 200;
+}
+header
+{   
+	color: #ffffff;
+	height: 160px;
+}
+/*.image
+{
+background-image: url("image/kittu.jpg");
+height: 100px;
+width: 10000px;
+*/
+
+				
+.tabs
+{
+	vertical-align: bottom;
+	word-spacing: 40px;
+	-webkit-column-count: 3;
+	-webkit-column-gap: 4;
+
+}
+
+.tabs:hover {
+	background-color: #f3f554;
+	color: #000000;
+	
+}
+
+
+.button {
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+
+.mainSettings {
+	margin: auto;
+	width: 960px;
+}
+
