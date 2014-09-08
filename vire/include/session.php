@@ -10,9 +10,9 @@
 	function setSession($nm) {
 		global $name;
 
-		$_SESSION["username"] = $nm;
+		$_SESSION["uid"] = $nm;
 		$name = $nm;
-		setcookie("user",$nm, time()+60*60*24*30);
+		setcookie("uid",$nm, time()+60*60*24*30);
 	}
 
 	function destroySession() {
@@ -20,13 +20,13 @@
 		session_destroy();
 	}
 
-	function getSessionName() {
+	function getSessionId() {
 		global $name;
-		if (isset($_SESSION["username"])) {
-			return $_SESSION["username"];
+		if (isset($_SESSION["uid"])) {
+			return $_SESSION["uid"];
 		}
 		else {
-			return $name;	
+			return null;	
 		}
 	}
 
@@ -48,8 +48,8 @@
 
 	function startSession() {
 		session_start();
-		if (isset($_SESSION["username"])) {
-			$name = $_SESSION["username"];
+		if (isset($_SESSION["uid"])) {
+			$name = $_SESSION["uid"];
 		}
 		else {
 			$name = "";	

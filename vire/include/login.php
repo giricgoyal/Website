@@ -6,9 +6,9 @@
 		if ($result != null) {
 			$pwd = $result->{"results"}[0]->{"password"};
 			if ($pwd == $upwd) {
-				return True;
+				return $result->{"results"}[0]->{"userid"};
 			}
 		}
-		return False;
+		return null;
 	}
 ?>

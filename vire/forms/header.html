@@ -22,9 +22,13 @@
 				</td>
 				<td class="headerTableColumnRight">
 					<?php
-						if (getSessionName() != "") {
+						if (getSessionId() != null) {
 					?>
+						<button type="submit" id="account" name="account" value="account" class="headerButtonAccount headerButtonColor">Account</button>
+						<button type="submit" id="logout" name="logout" value="logout" class="headerButtonLogout headerButtonColor">Logout</button>
+					<!--
 						<?php include $SITE_FORMS . "/dropdownAccount.html"; ?>
+					-->
 					<?php
 						}
 					?>

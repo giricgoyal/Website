@@ -15,7 +15,7 @@ class UserAccount(models.Model):
 
 # use accountinfo model
 class UserAccountInfo(models.Model):
-	account = models.ForeignKey(UserAccount, related_name='userids')
+	userid = models.CharField(max_length=128, blank=False, default='')
 	firstname = models.CharField(max_length=100, blank=False, default='')
 	lastname = models.CharField(max_length=100, blank=False, default='')
 	datetimejoined = models.DateTimeField(auto_now_add=True)

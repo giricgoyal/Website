@@ -9,3 +9,21 @@
 .font {
 	font-family: verdana;
 }
+
+.headerButtonColor{
+	background-color: #F0EB71;
+	border: 1px solid #FCFAD9;
+}
+
+.headerButtonColor:hover{
+	background-color: #FCFAD9;
+}
+
+
+.buttonColor {
+	background-color: #efefef;
+}
+
+.buttonColor:hover {
+	background-color: #fefe12;
+}

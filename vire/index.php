@@ -4,10 +4,9 @@
 	include $SITE_INCLUDE . "/db.php";
 	include $SITE_INCLUDE . "/login.php";
 
-	//startSession();
+	startSession();
 	
-	
-	if (getSessionName() == "") {
+	if (getSessionId() == null) {
 		include $SITE_FORMS . "/main.html";
 	}
 	else {
@@ -22,10 +21,10 @@
 			if ($_POST["loginName"] != "" && $_POST["loginPassword"] != "") {
 				$name = $_POST["loginName"];
 				$pwd = $_POST["loginPassword"];
-				$check = updateCreds($dbObj, $name, $pwd);
-				if ($check == True) {
-					$result = $dbObj->get("http://127.0.0.1:8000/useraccountinfo/?username=" . $name);
-					setSession($name);
+				$uid = updateCreds($dbObj, $name, $pwd);
+				if ($uid != null) {
+					$result = $dbObj->get("http://127.0.0.1:8000/useraccountinfo/?userid=" . $uid);
+					setSession($uid);
 					setUserInfo($result);
 					if (isset($_POST['loginRememberMe'])) {
 
