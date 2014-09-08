@@ -36,7 +36,7 @@ head
 {
 	color:#ffffff;
 	font-family: Georgia;
-	padding: 20px 30px 20px 30px;
+	padding: 20px 30px 20px 0px;
 }
 
 .header2
@@ -165,8 +165,8 @@ text-align: right;
 }
 .logo
 {
-	height: 60px;
-	width: 50px;
+	height: 12%;
+	width: 12%;
 }
 
 .contactusmain
