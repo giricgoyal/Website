@@ -1,5 +1,8 @@
 	<body>
 		<form action="index.php" method="post"-->
+			<table class="artbodytable">
+				<tr>
+					<td>
 			<link rel="stylesheet" href="<?php echo $SITE_CSS_URL ?>/flexslider.css" type="text/css" media="screen" />
 			  <div id="container" class="cf">
 			      
@@ -11,16 +14,16 @@
 			                <img src="<?php echo $SITE_IMAGE_URL?>/photo1.jpg" />
 			                </li>
 			                <li>
-			                <img src="image/photo2.jpg" />
+			                <img src="<?php echo $SITE_IMAGE_URL?>/photo2.jpg" />
 			                </li>
 			                <li>
-			                <img src="image/photo3.jpg" />
+			                <img src="<?php echo $SITE_IMAGE_URL?>/photo3.jpg" />
 			                </li>
 			                <li>
-			                <img src="image/photo4.jpg" />
+			                <img src="<?php echo $SITE_IMAGE_URL?>/photo4.jpg" />
 			                </li>
-			            <li>
-			                <img src="image/photo5.jpg" />
+			            	<li>
+			                <img src="<?php echo $SITE_IMAGE_URL?>/photo5.jpg" />
 			                </li>
 			                <li>
 			                <img src="image/photo6.jpg" />
@@ -78,5 +81,8 @@
 			  <!-- Optional FlexSlider Additions -->
 			  <script src="<?php echo $SITE_JS_URL ?>/jquery.easing.js"></script>
 			  <script src="<?php echo $SITE_JS_URL ?>/jquery.mousewheel.js"></script>
+			  </td>
+			  </tr>
+			</table>
 		</form>
 	</body>
