@@ -23,10 +23,11 @@
 	$SITE_ADMIN_FORMS		=	"forms";
 
 	$SITE_ARTIST_BASE	=	$SITE_BASE . "/artist";
-	$SITE_ARTIST_FORMS	=	$SITE_ARTIST_BASE . "/forms";
+	
 
 	$SITE_SHOP_BASE		=	$SITE_BASE . "/shop";
-	$SITE_SHOP_FORMS	=	$SITE_SHOP_BASE . "/forms";
+	$SITE_CONTACTUS_BASE	=	$SITE_BASE . "/ContactUs";
+	
 
 	// URLs
 
@@ -38,12 +39,12 @@
 	$SITE_ADMIN_BASE_URL		=	$SITE_BASE_URL . "/admin";
 	
 	$SITE_ARTIST_BASE_URL	=	$SITE_BASE_URL . "/artist";
-	$SITE_ARTIST_CSS_URL	=	$SITE_ARTIST_BASE_URL . "/css";
-	$SITE_ARTIST_JS_URL		=	$SITE_ARTIST_BASE_URL . "/js";
+	
 
 	$SITE_SHOP_BASE_URL		=	$SITE_BASE_URL . "/shop";
-	$SITE_SHOP_CSS_URL		=	$SITE_SHOP_BASE_URL . "/css";
-	$SITE_SHOP_JS_URL		=	$SITE_SHOP_BASE_URL . "/js";
+	$SITE_CONTACTUS_BASE_URL		=	$SITE_BASE_URL . "/ContactUs";
+
+	
 
 	// db
 	$databaseName = "testDB";
