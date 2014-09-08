@@ -20,7 +20,7 @@ class UserAccountSerializer(serializers.HyperlinkedModelSerializer):
 
 	class Meta:
 		model = UserAccount
-		fields = ('url', 'userid', 'username', 'password', 'userids')
+		fields = ('url', 'userid', 'username', 'password')
 
 	
 # User Account Info Serializer
