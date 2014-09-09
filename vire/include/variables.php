@@ -3,7 +3,6 @@
 
 	$_SESSION 			=	array();
 
-
 	$SITE_NAME			=	"vire";
 
 	$SITE_IP = "localhost";
@@ -19,9 +18,9 @@
 	$SITE_FORMS			=	$SITE_BASE . "/forms";
 
 	$SITE_ACCOUNT_BASE		=	$SITE_BASE . "/account";
-	$SITE_ACCOUNT_FORMS		=	$SITE_ACCOUNT_BASE . "/forms";
 	
-
+	$SITE_SIGNUP_BASE		=	$SITE_BASE . "/signup";
+	
 	// URLs
 
 	$SITE_BASE_URL 		= 	"http://" . $SITE_ADDR;
@@ -29,8 +28,6 @@
 	$SITE_CSS_URL 		=	$SITE_BASE_URL . "/css";
 
 	$SITE_ACCOUNT_BASE_URL		=	$SITE_BASE_URL . "/account";
-	$SITE_ACCOUNT_INCLUDE_URL	=	$SITE_ACCOUNT_BASE_URL . "/include";
-	$SITE_ACCOUNT_CSS_URL		=	$SITE_ACCOUNT_BASE_URL . "/css";
-
-
+	
+	$SITE_SIGNUP_BASE_URL		=	$SITE_BASE_URL . "/signup";
 ?>

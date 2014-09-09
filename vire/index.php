@@ -12,6 +12,8 @@
 	else {
 		include $SITE_ACCOUNT_BASE . "/index.php";
 	}
+
+	// include header
 	include $SITE_FORMS . "/header.html";
 
 	$dbObj = new dbClass();
@@ -48,8 +50,12 @@
 		header("Location:" . $SITE_INCLUDE_URL . "/logout.php");
 	}
 
+	else if (isset($_POST['signup'])) {
+		header("Location:" . $SITE_SIGNUP_BASE_URL);
+	}
 
 
+	// include footer
 	include $SITE_FORMS . "/footer.html";
 	
 ?>

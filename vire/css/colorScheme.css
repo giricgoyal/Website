@@ -10,13 +10,28 @@
 	font-family: verdana;
 }
 
-.headerButtonColor{
+.headerAccountButtonColor{
 	background-color: #F0EB71;
-	border: 1px solid #FCFAD9;
+	border-right: 1px solid #CCC521;
+	border-left: 0px;
+	border-top: 0px;
+	border-bottom: 0px;
 }
 
-.headerButtonColor:hover{
-	background-color: #FCFAD9;
+.headerAccountButtonColor:hover{
+	background-color: #CCC521;
+}
+
+.headerLogoutButtonColor{
+	background-color: #F0EB71;
+	border-left: 1px solid #CCC521;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 0px;
+}
+
+.headerLogoutButtonColor:hover{
+	background-color: #CCC521;
 }
 
 
@@ -25,5 +40,9 @@
 }
 
 .buttonColor:hover {
-	background-color: #fefe12;
+	background-color: #CCC521;
+}
+
+.headerTableColumnLeft a {
+	color: #000000;
 }

@@ -18,14 +18,14 @@
 		<table class="headerTable">
 			<tr class="headerTableRow">
 				<td class="headerTableColumnLeft">
-					ViRe <span class="subheaderText">powered by Elecktric</span>
+					<a href="<?php echo $SITE_BASE_URL ?>">ViRe <span class="subheaderText">powered by Elecktric</span></a>
 				</td>
 				<td class="headerTableColumnRight">
 					<?php
 						if (getSessionId() != null) {
 					?>
-						<button type="submit" id="account" name="account" value="account" class="headerButtonAccount headerButtonColor">Account</button>
-						<button type="submit" id="logout" name="logout" value="logout" class="headerButtonLogout headerButtonColor">Logout</button>
+						<button type="submit" id="account" name="account" value="account" class="headerButtonAccount headerAccountButtonColor">Account</button>
+						<button type="submit" id="logout" name="logout" value="logout" class="headerButtonLogout headerLogoutButtonColor">Logout</button>
 					<!--
 						<?php include $SITE_FORMS . "/dropdownAccount.html"; ?>
 					-->
