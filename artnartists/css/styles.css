@@ -37,6 +37,7 @@ head
 	color:#ffffff;
 	font-family: Georgia;
 	padding: 20px 30px 20px 0px;
+	border: 0px solid white;
 }
 
 .header2
@@ -174,7 +175,7 @@ text-align: right;
 
 	width: 960px;
 	margin: auto;
-	border: 1px solid white;
+	border: 0px solid white;
 }
 
 .contactustableleft
@@ -182,7 +183,7 @@ text-align: right;
 
 width: 60%;
 margin: auto;
-border:1px solid yellow;
+border:0px solid yellow;
 float: left;
 }
 
@@ -190,7 +191,7 @@ float: left;
 {
 	width:40%;
 	margin: auto;
-border:1px solid yellow;
+border:0px solid yellow;
 float: left;
 }
 
@@ -274,7 +275,7 @@ float: left;
 }
 .bootstrap-frm .button {
     background: #FFF;
-    border: 1px solid #CCC;
+    border: 0px solid #CCC;
     padding: 10px 25px 10px 25px;
     color: #333;
     border-radius: 4px;
@@ -282,7 +283,7 @@ float: left;
 .bootstrap-frm .button:hover {
     color: #333;
     background-color: #EBEBEB;
-    border-color: #ADADAD;
+    
 }
 .text1 h1 {
     font: 25px Georgia;
@@ -292,3 +293,14 @@ float: left;
     margin: -10px -30px 30px -30px;
     color: #ffffff;
     }
+
+ .contactustableright tr td
+    {
+border:0px solid white;
+    }
+
+.scale
+{
+	height: 40px;
+	width: 40px;
+}
