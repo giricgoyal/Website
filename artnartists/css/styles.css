@@ -239,6 +239,8 @@ float: left;
     font-weight: bold;
 }
 .bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
+    font-family: Georgia;
+    font-size: 1em;
     border: 1px solid #CCC;
     color: #888;
     height: 20px;
