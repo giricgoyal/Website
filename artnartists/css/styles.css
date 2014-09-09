@@ -81,7 +81,7 @@ div#hmenu ul a:link{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: medium; 
+   font-size: 1.3em; 
    color: #ffffff; 
    padding-left: 80px;
    padding-right: 80px;
@@ -92,7 +92,7 @@ div#hmenu ul a:visited{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: medium; 
+   font-size: 1.3em; 
    color: #ffffff; 
    padding-left: 80px;
    padding-right: 80px;
@@ -103,8 +103,7 @@ div#hmenu ul a:active{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: medium; 
-   color: #ffffff; 
+   font-size: 1.3em; 
     color: #000000; 
    background-color: #F2F525; 
    border-bottom-right-radius: 0px;
@@ -120,7 +119,7 @@ div#hmenu ul a:hover{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: medium; 
+   font-size: 1.3em; 
    color: #000000; 
    background-color: #F2F525; 
    
