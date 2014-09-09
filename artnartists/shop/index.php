@@ -4,7 +4,8 @@
 	
 
 	include $SITE_FORMS . "/header.html";
-	include $SITE_SHOP_FORMS . "/shop.html";
+	include $SITE_FORMS . "/header2.html";
+	include $SITE_FORMS . "/shop.html";
 	include $SITE_FORMS . "/footer.html";
 ?>
 
