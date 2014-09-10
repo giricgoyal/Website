@@ -5,6 +5,8 @@
 
 	$SITE_NAME			=	"vire";
 
+	$currentPage		=	"";
+
 	$SITE_IP = "localhost";
 	$SITE_ADDR = $SITE_IP . "/" . $SITE_NAME;
 

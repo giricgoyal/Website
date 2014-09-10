@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html class="font">
 	<title>
-		<?php echo $SITE_NAME ?>
+		<?php if ($currentPage == "") {
+			echo $SITE_NAME;
+		} 
+		else {
+			echo $SITE_NAME . " - " . $currentPage;
+		}
+		?>
 	</title>
 
 	<link href="<?php echo $SITE_CSS_URL ?>/headerstyles.css" type="text/css" rel="stylesheet">
@@ -18,7 +24,7 @@
 		<table class="headerTable">
 			<tr class="headerTableRow">
 				<td class="headerTableColumnLeft">
-					<a href="<?php echo $SITE_BASE_URL ?>">ViRe <span class="subheaderText">powered by Elecktric</span></a>
+					<a href="<?php echo $SITE_BASE_URL ?>">ViRe</a>
 				</td>
 				<td class="headerTableColumnRight">
 					<?php

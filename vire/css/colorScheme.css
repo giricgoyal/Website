@@ -46,3 +46,9 @@
 .headerTableColumnLeft a {
 	color: #000000;
 }
+
+.bodyInnerTable1 tr#header td{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #F0EB71;
+}
+

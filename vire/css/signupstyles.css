@@ -1,0 +1,12 @@
+.bodyInnerTable1 {
+	width: 950px;
+	height: 15px;
+	position: fixed;
+	padding: 0px;
+	top: 80px;
+}
+
+.bodyInnerTable1 tr td span {
+	font-size: 1.2em;
+	font-weight: bold;
+}

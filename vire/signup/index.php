@@ -7,6 +7,8 @@
 
 	startSession();
 
+	$currentPage = "signup";
+
 	include $SITE_FORMS . "/signup.html";
 
 	// include header

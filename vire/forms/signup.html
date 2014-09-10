@@ -1,11 +1,27 @@
 	<link href="<?php echo $SITE_CSS_URL ?>/mainstyles.css" type="text/css" rel="stylesheet">
+	<link href="<?php echo $SITE_CSS_URL ?>/signupstyles.css" type="text/css" rel="stylesheet">
 	
 	<body>
 		<form action="index.php" method="post">
-			<table class = "bodyTable secondaryColor1">
+			<table class="bodyTable secondaryColor1">
 				<tr>
 					<td>
-						signup
+						<table class="bodyInnerTable1">
+							<tr id="header">
+								<td colspan=2>
+									<span>Sign Up</span>
+								</td>
+							</tr>
+							<tr>
+								<td>Name:</td>
+								<td>
+									<input class="textInput" type="text" name="firstname" id="firstname" placeholder="First Name" value="">
+									<input class="textInput" type="text" name="middlename" id="middlename" placeholder="Middle Name" value="">
+									<input class="textInput" type="text" name="lastname" id="lastname" placeholder="Last Name" value="">
+								</td>
+						
+							</tr>
+						</table>
 					</td>
 				</tr>
 			</table>
