@@ -1,6 +1,6 @@
 html
 {
- background: url("../images/backgroundimage.jpg");
+ background: url("../images/backgroundimage.jpg") fixed;
 }
 
 head
