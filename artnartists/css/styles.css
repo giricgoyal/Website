@@ -232,6 +232,11 @@ float: left;
     background-color: #efefef;
     text-align: center;
 }
+.bootstrap-frm nav a
+{
+	text-decoration: none;
+
+}
 .bootstrap-frm h1>span {
     display: block;
     font-size: 11px;
