@@ -23,11 +23,10 @@
 	$SITE_ADMIN_FORMS		=	"forms";
 
 	$SITE_ARTIST_BASE	=	$SITE_BASE . "/artist";
-	
-
 	$SITE_SHOP_BASE		=	$SITE_BASE . "/shop";
 	$SITE_CONTACTUS_BASE	=	$SITE_BASE . "/ContactUs";
-	
+	$SITE_LOGIN_BASE	=	$SITE_BASE . "/login";
+		
 
 	// URLs
 
@@ -37,12 +36,10 @@
 	$SITE_IMAGE_URL		=	$SITE_BASE_URL . "/images";
 
 	$SITE_ADMIN_BASE_URL		=	$SITE_BASE_URL . "/admin";
-	
 	$SITE_ARTIST_BASE_URL	=	$SITE_BASE_URL . "/artist";
-	
-
 	$SITE_SHOP_BASE_URL		=	$SITE_BASE_URL . "/shop";
 	$SITE_CONTACTUS_BASE_URL		=	$SITE_BASE_URL . "/ContactUs";
+	$SITE_LOGIN_BASE_URL		=	$SITE_BASE_URL . "/login";
 
 	
 
