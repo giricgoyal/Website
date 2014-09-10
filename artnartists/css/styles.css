@@ -320,6 +320,8 @@ float: left;
     padding: 10px 25px 10px 25px;
     color: #333;
     border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
 }
 .bootstrap-frm .button:hover {
     color: #333;
