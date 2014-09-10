@@ -5,6 +5,7 @@
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
+	height: 30px;
 }
 .footerTable {
 	width: 99.5%;
@@ -13,10 +14,15 @@
 	margin-left: auto;
 	position: fixed;
 	bottom: 0px;
+	height: 20px;
+}
+
+.footerTable tr td#mainFooter {
+	width: 960px;
 }
 
 .footerTableRow {
-	height: 30px;
+	height: 20px;
 }
 
 .footerText1 {

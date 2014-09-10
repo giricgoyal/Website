@@ -15,28 +15,38 @@ html {
 
 .headerTableRow {
 	height: 50px;
-	font-size: 2em;
-	font-weight: bold;
 	color: black;
+}
+
+.headerTableRow td#mainHeader {
+	width: 960px;
+	padding-right: 10px;
+}
+.headerTableRow td#mainHeader table{
+	min-width: 960px;
+	padding-right: 10px;
+	height: 48px;
 }
 
 .headerTableColumnLeft {
 	width: 50%;
-	min-width: 480px;
 	text-align: left;
+	width: 480px;
 }
 
 .headerTableColumnLeft a {
 	text-decoration: none;
 	color: #000000;
+	font-size: 2em;
+	font-weight: bold;
 }
 
 .headerTableColumnRight {
 	width: 50%;
-	min-width: 480px;
 	text-align: right;
 	font-weight: normal;
-	font-size: 0.4em;
+	font-size: 0.8em;
+	width: 480px;
 }
 
 .headerTable {
