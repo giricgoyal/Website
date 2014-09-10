@@ -3,6 +3,8 @@
 	include $SITE_INCLUDE . "/session.php";
 	
 
+	$currentpage = "contactus";
+
 	include $SITE_FORMS . "/header.html";
 	include $SITE_FORMS . "/header2.html";
 	include $SITE_FORMS . "/ContactUs.html";

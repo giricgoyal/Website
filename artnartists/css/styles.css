@@ -101,7 +101,7 @@ div#hmenu ul a:visited{
    padding-right: 50px;
 } 
 
-div#hmenu ul a:active{ 
+div#hmenu ul li#currentpage a{ 
    margin: 0; 
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 

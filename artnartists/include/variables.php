@@ -3,6 +3,7 @@
 
 	$_SESSION 			=	array();
 
+	$currentpage		=	"asda";
 
 	$SITE_NAME			=	"artnartists";
 
