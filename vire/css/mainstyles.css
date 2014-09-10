@@ -42,6 +42,17 @@
 	height: 30px;
 	width: 99%;
 	border: 0;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.textInput:focus{
+	font-size: 14px;
+	border-radius: 4px;
+	height: 30px;
+	width: 99%;
+	border: 0;
+	box-shadow: 0 0 8px rgba(1, 73, 140, 1);
 }
 
 .loginRememberMe {
