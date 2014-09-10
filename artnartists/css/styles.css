@@ -12,14 +12,27 @@ head
 {
 	border: 0px solid black;
 	width: 100%;
-	height: 60px;
+	height: 100px;
 	min-width: 960px;
 	margin-right: auto;
 	margin-left: auto;
 	padding-right:20px;
-
-
+  background-color: #fffe00;
+  filter: alpha(opacity=60);
+  opacity: 0.3;
+  position: fixed;
+  top: 0px;
+  right: 0px;
 }
+
+.paddingHeader {
+  width: 100%;
+  height: 100px;
+  min-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .headeralign
 {
 	text-align: right;
@@ -165,8 +178,9 @@ text-align: right;
 }
 .logo
 {
-	height: 12%;
-	width: 12%;
+	height: 7%;
+	width: 7%;
+  opacity: 1;
 }
 
 .contactusmain
