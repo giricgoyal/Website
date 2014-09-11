@@ -108,6 +108,10 @@ html
   font-family: verdana;
 }
 
+.mainBody tr td span a {
+ text-decoration: none;
+}
+
 .textinput {
   width: 40%;
   height: 30px;
