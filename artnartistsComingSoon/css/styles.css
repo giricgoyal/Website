@@ -21,6 +21,7 @@ html
 }
 
 .headertable tr td {
+  height: 2em;
   vertical-align: bottom;
   text-align: center;
 }
@@ -51,7 +52,7 @@ html
   font-size: 2em;
   font-family: Verdana;
   border-radius: 10px;
- 
+  font-family: harrington;
 }
 
 .paddingTable {
