@@ -22,7 +22,6 @@ html
 
 .headertable tr td {
   vertical-align: bottom;
-  min-width: 960px;
   text-align: center;
 }
 
@@ -45,7 +44,7 @@ html
   vertical-align: top;
   font-family: Verdana;
   border-radius: 10px;
- 
+  padding-bottom: 10px;
 }
 
 .headertable tr td#artnartists span{
@@ -54,13 +53,18 @@ html
   border-radius: 10px;
  
 }
-.paddingHeader {
-  width: 100%;
-  height: 100px;
-  min-width: 960px;
-  margin-right: auto;
-  margin-left: auto;
+
+.paddingTable {
+  height: 400px;
 }
+
+
+.mainBody {
+  border: 1px white solid;
+  margin: auto;
+  width: 960px;
+}
+
 
 .footer
 {
