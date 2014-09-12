@@ -24,11 +24,25 @@ head
 
 .paddingHeader {
   width: 100%;
-  height: 100px;
+  height: 50px;
   min-width: 960px;
   margin-right: auto;
   margin-left: auto;
 }
+
+.paddingHeader2 {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 50px;
+  min-width: 960px;
+  right: 0px;
+  left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #dedede;
+}
+
 .text
 {
 	text-decoration: none;
@@ -48,7 +62,7 @@ head
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 60px;
+	height: 40px;
 	font-family: Georgia;
 	text-decoration: none;
 }
@@ -63,6 +77,7 @@ div#hmenu {
    
    width: 100%; 
    text-align: center; 
+   border-bottom: 0px solid #F2F525;
   
 } 
 
@@ -83,7 +98,7 @@ div#hmenu ul a:link{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: 1.3em; 
+   font-size: 1em; 
    color: #ffffff; 
    padding-left: 50px;
    padding-right: 50px;
@@ -94,7 +109,7 @@ div#hmenu ul a:visited{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: 1.3em; 
+   font-size: 1em; 
    color: #ffffff; 
    padding-left: 50px;
    padding-right: 50px;
@@ -105,7 +120,7 @@ div#hmenu ul li#currentpage a{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: 1.3em; 
+   font-size: 1em; 
     color: #000000; 
    background-color: #F2F525; 
    border-bottom-right-radius: 0px;
@@ -121,7 +136,7 @@ div#hmenu ul a:hover{
    padding: .3em .4em .3em .4em; 
    text-decoration: none; 
    font-weight: bold; 
-   font-size: 1.3em; 
+   font-size: 1em; 
    color: #000000; 
    background-color: #F2F525; 
    
@@ -189,13 +204,13 @@ text-align: right;
 
 	width: 960px;
 	margin: auto;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 .logo
 {
-  height: 80px;
-  width: 80px;
+  height: 40px;
+  width: 40px;
   opacity: 1;
 }
 .contactustableleft
@@ -216,118 +231,6 @@ float: left;
 }
 
 
-/* #### bootstrap Form #### */
-.bootstrap-frm {
-    margin-left:auto;
-    margin-right:auto;
-
-    max-width: 500px;
-    
-    padding: 20px 30px 20px 30px;
-    font: 12px Georgia;
-    color: #ffffff;
-    background-color: #efefef;
-    
-    border:0px solid #DDD;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-}
-.bootstrap-frm h1 {
-    font: 25px Georgia;
-    padding: 0px 0px 10px 40px;
-    display: block;
-    border-bottom: 1px solid #DADADA;
-    margin: -10px -30px 30px -30px;
-    color: #000000;
-    background-color: #efefef;
-    text-align: center;
-}
-.bootstrap-frm nav{
-    font: 25px Georgia;
-    padding: 40px 0px 0px 0px;
-    display: block;
-    border-top: 0px solid #DADADA;
-    margin: -10px -30px 30px -30px;
-    color: #000000;
-    background-color: #efefef;
-    text-align: center;
-}
-.bootstrap-frm nav a
-{
-	text-decoration: none;
-
-}
-.bootstrap-frm h1>span {
-    display: block;
-    font-size: 11px;
-}
-.bootstrap-frm label {
-    display: block;
-    margin: 0px 0px 5px;
-
-}
-.bootstrap-frm label>span {
-    float: left;
-    width: 20%;
-    text-align: right;
-    padding-right: 10px;
-    margin-top: 10px;
-    color: #000000;
-    font-family: Georgia;
-    font-weight: bold;
-}
-.bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
-    font-family: Georgia;
-    font-size: 1em;
-    border: 1px solid #CCC;
-    color: #888;
-    height: 20px;
-    line-height:15px;
-    margin-bottom: 16px;
-    margin-right: 6px;
-    margin-top: 2px;
-    outline: 0 none;
-    padding: 5px 0px 5px 5px;
-    width: 70%;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;    
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-}
-.bootstrap-frm select {
-    background: #FFF url('down-arrow.png') no-repeat right;
-    background: #FFF url('down-arrow.png') no-repeat right;
-    appearance:none;
-    -webkit-appearance:none; 
-    -moz-appearance: none;
-    text-indent: 0.01px;
-    text-overflow: '';
-    width: 70%;
-    height: 35px;
-    line-height:15px;
-}
-.bootstrap-frm textarea{
-    height:100px;
-    padding: 5px 0px 0px 5px;
-    width: 70%;
-}
-.bootstrap-frm .button {
-    background: #fff;
-    border: 0px solid #CCC;
-    padding: 10px 25px 10px 25px;
-    color: #333;
-    border-radius: 4px;
-    cursor: pointer;
-    cursor: hand;
-}
-.bootstrap-frm .button:hover {
-    color: #333;
-    background-color: #EBEBEB;
-    
-}
 .text1 h1 {
     font: 25px Georgia;
     padding: 0px 0px 10px 40px;

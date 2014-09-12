@@ -3,70 +3,101 @@
 	<table class="contactusmain">
 		<tr>
 			<td>
-				<table class="contactustableleft">
+				<table class="contactusform">
 					<tr>
-						<td>
-							<form action="" method="post" class="bootstrap-frm ">
-    							<h1>Contact Form 
-        						<span>Please fill all the texts in the fields.</span>
-    							</h1>
-    							<label>
-        						<span>Your Name :</span>
-        						<input id="name" type="text" name="name" placeholder="Your Full Name" />
-    							</label>
-    
-    							<label>
-        						<span>Your Email :</span>
-        						<input id="email" type="email" name="email" placeholder="Valid Email Address" />
-    							</label>
-    
-    							<label>
-       							<span>Message :</span>
-       							<textarea id="message" name="message" placeholder="Your Message to Us"></textarea>
-   								</label> 
-     							<label>
-        						<span>Subject :</span><select name="selection">
-       							 <option value="Job Inquiry">Job Inquiry</option>
-       	 						<option value="General Question">General Question</option>
-       							 </select>
-    							</label>    
-     						
-        						<span>&nbsp;</span> 
-       							 <button type="button" class="button" value="Send" >Send</button> 
-       							 <button type="clear" class="button" value="Clear" >Clear</button> 
-       							 <nav>
-       							 <a href="mailto:artnartists@gmail.com?" target="_top">
-							<img  src="<?php echo $SITE_IMAGE_URL?>/mail.png" class="scale"/>
-					    </a>
-							
-					
-						<img src="<?php echo $SITE_IMAGE_URL?>/address.png" class="scale"/>
-						
-						<img src="<?php echo $SITE_IMAGE_URL?>/facebook.png" class="scale"/>
-
-					
-					
-					
-						<img src="<?php echo $SITE_IMAGE_URL?>/Twitter.png" class="scale"/>
-					</nav>
-    							   
-							</form>
+						<td id="head" colspan=4>
+							<span id="h1">Contact Form</span>
 						</td>
-
-
 					</tr>
-					
-				
+					<tr>
+						<td id="headBelow" colspan=4>
+							<span id="b1">If you would like to reach us, please fill the form below and one of us will be in contact with you within 24 hours. Or you can contact us through the social media below.</span>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td id="body" class="bodyLeft">
+							<span class="label">Your Name :</span>
+						</td>
+						<td id="body" class="bodyRight">
+							<input id="name" type="text" name="name" placeholder="Your Full Name" class="inputText"/>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="bodyLeft">
+							<span class="label">Your Email :</span>
+						</td>
+						<td class="bodyRight">
+							<input id="email" type="email" name="email" placeholder="Your Email" class="inputText"/>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="bodyLeft">
+							<span class="label">Your Message :</span>
+						</td>
+						<td class="bodyRight">
+							<textarea id="message" name="message" placeholder="Your Message to Us" class="textarea"></textarea>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="bodyLeft">
+							<span class="label">Subject :</span>
+						</td>
+						<td class="bodyRight">
+							<select name="selection" class="dropDown">
+       							<option value="Job Inquiry">Job Inquiry</option>
+       	 						<option value="General Question">General Question</option>
+       						</select>
+						</td>
+						<td></td>
+					</tr>
+					<tr class="bodyPadding">
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="bodyBottom" colspan=2>
+							 <button type="button" class="button" value="Send" >Send</button>
+						</td>
+						<td></td>
+					</tr>
+					<tr class="bodyPadding">
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="bodyBottom" colspan=2>
+							<a href="mailto:artnartists@gmail.com?" target="_top" class="socialLinks">
+								<img  src="<?php echo $SITE_IMAGE_URL?>/mail.png" class="scale"/>
+					   		</a>
+							<a href="#loginScreen" class="socialLinks">
+								<img src="<?php echo $SITE_IMAGE_URL?>/address.png" class="scale"/>
+							</a>
+							<a href="https://www.facebook.com/artndartists" target="_blank" class="socialLinks">
+								<img src="<?php echo $SITE_IMAGE_URL?>/facebook.png" class="scale"/>
+							</a>
+							<a href="https://twitter.com/art_n_artists" target="_blank" class="socialLinks">
+								<img src="<?php echo $SITE_IMAGE_URL?>/Twitter.png" class="scale"/>
+							</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr class="bodyPadding">
+						<td></td>
+					</tr>
 				</table>
-
-
-
-
-
-
+				<div id="loginScreen"> 
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.0211886910342!2d-87.61604799999996!3d41.89240139999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2b54550e48cf%3A0xd93618c4dc53038!2s445+E+Ohio+St%2C+Chicago%2C+IL+60611!5e0!3m2!1sen!2sus!4v1410489131610" width="800" height="600" frameborder="0" style="border:0"></iframe>
+					<a href="#" class="cancel">&times;</a> 
+				</div> 
+				<div id="cover" > </div>
 			</td>
-
-
 		</tr>
 
 	</table>
