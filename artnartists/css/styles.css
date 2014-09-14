@@ -73,8 +73,6 @@ head
 
 div#hmenu { 
    margin: 0; 
-   padding: .3em 0 .3em 0; 
-   
    width: 100%; 
    text-align: center; 
    border-bottom: 0px solid #F2F525;
@@ -161,75 +159,24 @@ div#hmenu ul a:hover{
 	text-decoration: none;
 
 }
+
 .footerrowleft
 {
-text-align: left;
-font-size: 0.6em;
+  text-align: left;
+  font-size: 0.6em;
 }
+
 .footerrowright
 {
-text-align: right;
+  text-align: right;
 }
 
-.artbodytable
-{
-	width:960px;
-	margin: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-.artistbodytable
-{
-  width:960px;
-  margin: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.shopbodytable
-{
-  width:960px;
-  margin: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.loginbodytable
-{
-  width:960px;
-  margin: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.contactusmain
-{
-
-	width: 960px;
-	margin: auto;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
 .logo
 {
   height: 40px;
   width: 40px;
   opacity: 1;
 }
-.contactustableleft
-{
-
-width: 100%;
-margin: auto;
-border:0px solid yellow;
-float: left;
-}
-
-.contactustableright
-{
-	width:40%;
-	margin: auto;
-border:0px solid yellow;
-float: left;
-}
-
 
 .text1 h1 {
     font: 25px Georgia;
@@ -238,12 +185,7 @@ float: left;
     border-bottom: 0px solid #DADADA;
     margin: -10px -30px 30px -30px;
     color: #ffffff;
-    }
-
- .contactustableright tr td
-    {
-border:0px solid white;
-    }
+}
 
 .scale
 {

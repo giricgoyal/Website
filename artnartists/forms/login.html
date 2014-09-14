@@ -1,6 +1,90 @@
 	<body>
-		<form action="index.php" method="post"-->
+		<form action="<?php echo $SITE_LOGIN_BASE_URL?>/index.php" method="post"-->
 			<table class="loginbodytable">
+				<tr>
+					<td id="left">
+						<table class="login">
+							<tr>
+								<td id="head">
+									<span id="h1">Existing members</span>
+								</td>
+							</tr>
+							<tr class="bodyPadding">
+								<td></td>
+							</tr>
+							<tr>
+								<td class="inputtd">
+									<input id="username" type="text" name="username" placeholder="Username or email or phone number" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="inputtd">
+									<input id="password" type="password" name="password" placeholder="Password" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="inputbuttons">
+									<input id="rememberme" type="checkbox" name="rememberme" />Remember Me
+								</td>
+							</tr>
+							<tr>
+								<td class="inputbuttons">
+									 <button type="submit" class="button" value="signin" name="signin" >Sign In</button>&nbsp
+									 <a href="" class="link">Forgot Password?</a>
+								</td>
+							</tr>
+							<tr class="bodyPadding">
+								<td></td>
+							</tr>
+							
+						</table>
+						
+						
+					</td>
+					<td id="right">
+
+						<table class="login">
+							<tr>
+								<td id="head" colspan=2>
+									<span id="h1">Not a member yet? Sign up!</span>
+								</td>
+							</tr>
+							<tr class="bodyPadding">
+								<td></td>
+							</tr>
+							<tr>
+								<td class="inputtd">
+									<input id="firstname" type="text" name="firstname" placeholder="First Name" class="inputTextLogin"/>
+								</td>
+								<td class="inputtd">
+									<input id="lastname" type="text" name="lastname" placeholder="Last Name" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="inputtd" colspan=2>
+									<input id="email" type="email" name="email" placeholder="Enter email address" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="inputtd" colspan=2>
+									<input id="password" type="password" name="password" placeholder="Create a password (8-16 characters)" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td class="inputbuttons" colspan=2>
+									 <button type="submit" class="button" value="signup" name="signup" >Sign Up</button>
+								</td>
+							</tr>
+							<tr class="bodyPadding">
+								<td></td>
+							</tr>
+							
+						</table>
+						
+
+
+					</td>
+				</tr>
 			</table>
 		</form>
 	</body>

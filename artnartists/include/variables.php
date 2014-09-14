@@ -3,7 +3,7 @@
 
 	$_SESSION 			=	array();
 
-	$currentpage		=	"asda";
+	$currentpage		=	"";
 
 	$SITE_NAME			=	"artnartists";
 
@@ -27,6 +27,7 @@
 	$SITE_SHOP_BASE		=	$SITE_BASE . "/shop";
 	$SITE_CONTACTUS_BASE	=	$SITE_BASE . "/ContactUs";
 	$SITE_LOGIN_BASE	=	$SITE_BASE . "/login";
+	$SITE_SIGNUP_BASE	=	$SITE_BASE . "/signup";
 		
 
 	// URLs
@@ -41,7 +42,9 @@
 	$SITE_SHOP_BASE_URL		=	$SITE_BASE_URL . "/shop";
 	$SITE_CONTACTUS_BASE_URL		=	$SITE_BASE_URL . "/ContactUs";
 	$SITE_LOGIN_BASE_URL		=	$SITE_BASE_URL . "/login";
+	$SITE_SIGNUP_BASE_URL		=	$SITE_BASE_URL . "/signup";
 
+	
 	
 
 	// db

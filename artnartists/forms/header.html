@@ -4,7 +4,19 @@
 	<link rel="stylesheet" href="<?php echo $SITE_CSS_URL ?>/mainBodyStyles.css" type="text/css" media="screen" />
 				
 	<title>	
-		<?php echo $SITE_NAME ?>
+		<?php
+			if ($currentpage == "art") {
+				echo $SITE_NAME . " - " . "home";
+			}
+			else if ($currentpage != "") {
+				echo $SITE_NAME . " - " . $currentpage;	
+			}
+			
+			else {
+				echo $SITE_NAME;	
+			} 
+			
+		?>
 	</title>
 	<link rel="stylesheet" href="<?php echo $SITE_CSS_URL ?>/styles.css" type="text/css" media="screen" />
 			

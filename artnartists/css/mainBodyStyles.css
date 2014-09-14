@@ -1,15 +1,78 @@
+.loginbodytable
+{
+  	width: 960px;
+  	margin: auto;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	border-radius: 5px;
+  	background-color: #ededed;
+}
+
+.artbodytable
+{
+	width:960px;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 5px;
+	background-color: #ededed;
+}
+
+.artistbodytable
+{
+  	width:960px;
+  	margin: auto;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	border-radius: 5px;
+  	background-color: #ededed;
+}
+
+.shopbodytable
+{
+  	width:960px;
+  	margin: auto;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	border-radius: 5px;
+  	background-color: #ededed;
+}
+
+.contactusmain
+{
+	width: 960px;
+  	margin: auto;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	border-radius: 5px;
+  	background-color: #ededed;
+}
+
+.signupmain
+{
+	width: 960px;
+  	margin: auto;
+  	padding-top: 20px;
+  	padding-bottom: 20px;
+  	border-radius: 5px;
+  	background-color: #ededed;
+}
 .contactusform {
 	border: 0px solid white;
 	font-style: Georgia;
 	border-radius: 5px;
 	background-color: #ededed;
-}
-
-.contactusform tr td {
+	width: 100%;
 }
 
 .contactusform tr td#head, td#body {
-	padding-top: 20px;
+	padding-top: 10px;
+}
+
+td#head, td#headBelow, td#bodyhead {
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: justify;
 }
 
 .contactusform tr td#headBelow {
@@ -18,7 +81,7 @@
 }
 
 .contactusform span#h1 {
-	font-size: 1.7em;
+	font-size: 1.3em;
 }
 
 
@@ -48,6 +111,22 @@
 }
 
 .inputText:focus {
+	box-shadow: 0px 0px 5px #F2F525;
+}
+
+.inputTextLogin {
+	height: 30px;
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 5px;
+	border: 0px solid #eaeaea; 
+	vertical-align: center;
+	font-size: 0.9em;
+	font-family: Georgia;
+}
+
+.inputTextLogin:focus {
 	box-shadow: 0px 0px 5px #F2F525;
 }
 
@@ -141,6 +220,7 @@
 	height:100%; 
 	display:none; 
 } 
+
 #loginScreen { 
 	width: 800px; 
 	position: absolute;
@@ -152,9 +232,11 @@
 	border:5px solid #cccccc; 
 	border-radius:10px; 
 } 
+
 #loginScreen:target, #loginScreen:target + #cover{ 
 	display:block; opacity:2; 
 } 
+
 .cancel { 
 	display:block; 
 	position:absolute; 
@@ -168,4 +250,46 @@
 	text-decoration:none; 
 	text-align:center; 
 	font-weight:bold; 
+}
+
+
+.loginbodytable tr td#left {
+	width: 50%;
+	vertical-align: top;
+}
+
+.loginbodytable tr td#right {
+	width: 50%;
+	vertical-align: top;
+	border-left: 1px solid #cecece;
+}
+
+.login {
+	width: 80%;
+	text-align: center;
+	margin: auto;
+}
+
+.login tr td#head {
+	padding: 0px;
+	padding-top: 10px;
+	text-align: left;
+	border-bottom: 1px solid #cecece;
+	font-size: 1.3em;
+}
+
+.inputbuttons {
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+.inputtd {
+	text-align: center;
+	padding-top: 10px;
+	padding-right: 20px;
+}
+
+.link {
+	color: #1212d7;
 }
