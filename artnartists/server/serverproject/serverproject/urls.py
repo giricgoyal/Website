@@ -2,7 +2,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from rest_framework import routers
-from server import views
+from app import views
 
 admin.autodiscover()
 
@@ -10,8 +10,8 @@ admin.autodiscover()
 router = routers.DefaultRouter()
 router.register(r'users',views.UserViewSet)
 router.register(r'useraccount',views.UserAccountViewSet)
-router.register(r'artistaccount',views.ArtistAccountViewSet)
 router.register(r'useraccountinfo',views.UserAccountInfoViewSet)
+router.register(r'customeraccountinfo',views.CustomerAccountInfoViewSet)
 router.register(r'artistaccountinfo',views.ArtistAccountInfoViewSet)
 
 # url patterns

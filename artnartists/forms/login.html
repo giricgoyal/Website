@@ -1,8 +1,9 @@
 	<body>
-		<form action="<?php echo $SITE_LOGIN_BASE_URL?>/index.php" method="post"-->
-			<table class="loginbodytable">
-				<tr>
-					<td id="left">
+		
+		<table class="loginbodytable">
+			<tr>
+				<td id="left">
+					<form action="<?php echo $SITE_LOGIN_BASE_URL?>/index.php" id="login" method="post"-->
 						<table class="login">
 							<tr>
 								<td id="head">
@@ -14,12 +15,12 @@
 							</tr>
 							<tr>
 								<td class="inputtd">
-									<input id="username" type="text" name="username" placeholder="Username or email or phone number" class="inputTextLogin"/>
+									<input id="username" type="text" name="username" placeholder="Username or email or phone number" class="inputTextLogin" required/>
 								</td>
 							</tr>
 							<tr>
 								<td class="inputtd">
-									<input id="password" type="password" name="password" placeholder="Password" class="inputTextLogin"/>
+									<input id="password" type="password" name="password" placeholder="Password" class="inputTextLogin" required/>
 								</td>
 							</tr>
 							<tr>
@@ -38,53 +39,52 @@
 							</tr>
 							
 						</table>
+					</form>
+					
+				</td>
+				<td id="right">
+					<form action="<?php echo $SITE_LOGIN_BASE_URL?>/index.php" id="signup" method="post"-->
+					<table class="login">
+						<tr>
+							<td id="head" colspan=2>
+								<span id="h1">Not a member yet? Sign up!</span>
+							</td>
+						</tr>
+						<tr class="bodyPadding">
+							<td></td>
+						</tr>
+						<tr>
+							<td class="inputtd">
+								<input id="firstname" type="text" name="firstname" placeholder="First Name" class="inputTextLogin" required/>
+							</td>
+							<td class="inputtd">
+								<input id="lastname" type="text" name="lastname" placeholder="Last Name" class="inputTextLogin" required/>
+							</td>
+						</tr>
+						<tr>
+							<td class="inputtd" colspan=2>
+								<input id="email" type="email" name="email" placeholder="Enter email address" class="inputTextLogin" required/>
+							</td>
+						</tr>
+						<tr>
+							<td class="inputtd" colspan=2>
+								<input id="password" type="password" name="password" placeholder="Create a password (8-16 characters)" class="inputTextLogin" required/>
+							</td>
+						</tr>
+						<tr>
+							<td class="inputbuttons" colspan=2>
+								 <button type="submit" class="button" value="signup" name="signup" >Sign Up</button>
+							</td>
+						</tr>
+						<tr class="bodyPadding">
+							<td></td>
+						</tr>
 						
-						
-					</td>
-					<td id="right">
+					</table>
+					
+				</form>
 
-						<table class="login">
-							<tr>
-								<td id="head" colspan=2>
-									<span id="h1">Not a member yet? Sign up!</span>
-								</td>
-							</tr>
-							<tr class="bodyPadding">
-								<td></td>
-							</tr>
-							<tr>
-								<td class="inputtd">
-									<input id="firstname" type="text" name="firstname" placeholder="First Name" class="inputTextLogin"/>
-								</td>
-								<td class="inputtd">
-									<input id="lastname" type="text" name="lastname" placeholder="Last Name" class="inputTextLogin"/>
-								</td>
-							</tr>
-							<tr>
-								<td class="inputtd" colspan=2>
-									<input id="email" type="email" name="email" placeholder="Enter email address" class="inputTextLogin"/>
-								</td>
-							</tr>
-							<tr>
-								<td class="inputtd" colspan=2>
-									<input id="password" type="password" name="password" placeholder="Create a password (8-16 characters)" class="inputTextLogin"/>
-								</td>
-							</tr>
-							<tr>
-								<td class="inputbuttons" colspan=2>
-									 <button type="submit" class="button" value="signup" name="signup" >Sign Up</button>
-								</td>
-							</tr>
-							<tr class="bodyPadding">
-								<td></td>
-							</tr>
-							
-						</table>
-						
-
-
-					</td>
-				</tr>
-			</table>
-		</form>
+				</td>
+			</tr>
+		</table>
 	</body>

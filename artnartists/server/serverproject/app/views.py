@@ -1,9 +1,9 @@
 # imports
 from django.shortcuts import render
-from django.contrib.auth.models import User, Group
-from server.models import UserAccount, UserAccountInfo, ArtistAccount, ArtistAccountInfo
+from django.contrib.auth.models import User
+from app.models import UserAccount, CustomerAccountInfo, ArtistAccountInfo, UserAccountInfo
 from rest_framework import viewsets, filters
-from server.serializers import UserSerializer, UserAccountSerializer, UserAccountInfoSerializer, ArtistAccountSerializer, ArtistAccountInfoSerializer
+from app.serializers import UserSerializer, UserAccountSerializer, UserAccountInfoSerializer, CustomerAccountInfoSerializer, ArtistAccountInfoSerializer
 
 # user view set
 class UserViewSet(viewsets.ModelViewSet):
@@ -20,23 +20,23 @@ class UserAccountViewSet(viewsets.ModelViewSet):
 	serializer_class = UserAccountSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('username', 'password') # specify filter fields
+	filter_fields = ('userid', 'username', 'password', 'accounttype') # specify filter fields
 
-# artist account view set
-class ArtistAccountViewSet(viewsets.ModelViewSet):
-	queryset = ArtistAccount.objects.all()
-	serializer_class = ArtistAccountSerializer
-	# apply filters
-	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('username', 'password') # specify filter fields
-
-# user account info view set
+# Customer account info view set
 class UserAccountInfoViewSet(viewsets.ModelViewSet):
 	queryset = UserAccountInfo.objects.all()
 	serializer_class = UserAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('firstname', 'lastname', 'username', 'datetimejoined') # specify filter fields
+	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+
+# Customer account info view set
+class CustomerAccountInfoViewSet(viewsets.ModelViewSet):
+	queryset = CustomerAccountInfo.objects.all()
+	serializer_class = CustomerAccountInfoSerializer
+	# apply filters
+	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
+	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
 
 # artist account info view set
 class ArtistAccountInfoViewSet(viewsets.ModelViewSet):
@@ -44,6 +44,7 @@ class ArtistAccountInfoViewSet(viewsets.ModelViewSet):
 	serializer_class = ArtistAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('firstname', 'lastname', 'username', 'datetimejoined') # specify filter fields
+	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+
 
 

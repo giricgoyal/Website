@@ -1,5 +1,5 @@
 	<body>
-		<form action="index.php" method="post"-->
+		<form action="<?php echo $SITE_SIGNUP_BASE_URL?>/index.php" id="signup" method="post"-->
 			<table class="signupmain">
 				<tr>
 					<td>
@@ -28,13 +28,13 @@
 									<span class="label">Name :</span>
 								</td>
 								<td id="body" class="inputtd">
-									<input id="firstname" type="text" name="firstname" placeholder="First" class="inputTextLogin"/>
+									<input id="firstname" type="text" name="firstname" value="" placeholder="First" class="inputTextLogin"/>
 								</td>
 								<td id="body" class="inputtd">
-									<input id="lastname" type="text" name="lastname" placeholder="Middle (optional)" class="inputTextLogin"/>
+									<input id="middlename" type="text" name="middlename" placeholder="Middle (optional)" class="inputTextLogin"/>
 								</td>
 								<td id="body" class="inputtd">
-									<input id="lastname" type="text" name="lastname" placeholder="Last" class="inputTextLogin"/>
+									<input id="lastname" type="text" name="lastname" value="" placeholder="Last" class="inputTextLogin"/>
 								</td>
 								<td>&nbsp</td>
 							</tr>
@@ -66,7 +66,7 @@
 									<span class="label">Email :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
-									<input id="email" type="email" name="email" placeholder="Email address" class="inputTextLogin"/>
+									<input id="email" type="email" name="email" value="" placeholder="Email address" class="inputTextLogin"/>
 								</td>
 								<td>&nbsp</td>
 							</tr>

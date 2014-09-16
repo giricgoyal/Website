@@ -1,5 +1,5 @@
 """
-Django settings for artandartists project.
+Django settings for serverproject project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'p=+v44!5u$icdk5ze5&_=&dp04&spcp6ikl7*+gm2yq67#y!b$'
+SECRET_KEY = '%5$+zb0lotl_f^3!c09=s8gzl_l&!2s*&qifn@gpnf2ph5zgi@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'server',
+    'app',
     'rest_framework'
 )
 
@@ -50,9 +50,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'artandartists.urls'
+ROOT_URLCONF = 'serverproject.urls'
 
-WSGI_APPLICATION = 'artandartists.wsgi.application'
+WSGI_APPLICATION = 'serverproject.wsgi.application'
 
 
 # Database

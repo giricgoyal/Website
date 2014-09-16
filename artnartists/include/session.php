@@ -4,8 +4,7 @@
 
 	// variables
 	$name = "";
-
-
+	
 	// functions
 	function setSession($nm) {
 		global $name;
@@ -53,5 +52,17 @@
 	}
 	else {
 		$name = "";	
+	}
+
+
+	function setSignupDetails($fn, $ln, $em, $ps) {
+		$val = $fn . ":" . $ln . ":" . $em . ":" . $ps;
+		$_SESSION["signupDetails"] = $val;
+	}
+
+	function getSignupDetails() {
+		$val = $_SESSION["signupDetails"];
+		$valArr = explode(":", $val);
+		return $valArr;
 	}
 ?>

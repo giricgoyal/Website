@@ -2,6 +2,10 @@
 
 PROJECT="serverproject"
 APP="app"
+if [ ! -d "server" ]; then
+	mkdir server
+fi
+cd server
 echo "... Creating virtual env for posix system ..."
 virtualenv env
 echo "... Activating virtual env ..."

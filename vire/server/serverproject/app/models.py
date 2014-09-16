@@ -24,4 +24,4 @@ class UserAccountInfo(models.Model):
 		super(UserAccountInfo, self).save(*args, **kwargs)
 
 	def __unicode__(self):
-		return self.account
+		return self.userid
