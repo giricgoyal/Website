@@ -7,10 +7,7 @@
 	
 	// functions
 	function setSession($nm) {
-		global $name;
-
-		$_SESSION["name"] = $nm;
-		$name = $nm;
+		$_SESSION["uid"] = $nm;
 	}
 
 	function destroySession() {
@@ -18,31 +15,12 @@
 		session_destroy();
 	}
 
-	function getSessionName() {
-		global $name;
-		if (isset($_SESSION["name"])) {
-			return $_SESSION["name"];
+	function getSessionId() {
+		if (isset($_SESSION["uid"])) {
+			return $_SESSION["uid"];
 		}
 		else {
-			return $name;	
-		}
-	}
-
-	function setAttempt($val) {
-		if ($val == 0) {
-			$_SESSION["attempts"] = $val;
-		}
-		else {
-			$_SESSION["attempts"] = $_SESSION["attempts"] + 1;
-		}
-	}
-
-	function getAttempts() {
-		if (isset($_SESSION["attempts"])) {
-			return $_SESSION["attempts"];
-		}
-		else {
-			return 0;
+			return null;	
 		}
 	}
 

@@ -14,18 +14,18 @@
 		if ($_POST["username"] != "" && $_POST["username"] != "") {
 			$name = $dbObj->enVal($_POST["username"]);
 			$pwd = $dbObj->enVal($_POST["password"]);
-			$result = $dbObj->get($USER_ACCOUNT_URL . "/?". $dbObj->enKey("username") . "=" . $uname);
+			$result = $dbObj->get($USER_ACCOUNT_URL . "?". $dbObj->enKey("username") . "=" . $name);
 			$uid = null;
 			if ($result != null) {
-				$pwd = $result->{"results"}[0]->{$dbObj->enKey("password")};
-				if ($pwd == $upwd) {
+				$pwrd = $result->{"results"}[0]->{$dbObj->enKey("password")};
+				if ($pwrd == $pwd) {
 					$uid = $result->{"results"}[0]->{$dbObj->enKey("userid")};
+					echo $uid;
 				}
 			}
 			if ($uid != null) {
-				$result = $dbObj->get($USER_ACCOUNT_INFO_URL . "/?". $dbObj->enKey("userid") . "=" . $uid);
+				$result = $dbObj->get($USER_ACCOUNT_INFO_URL . "?". $dbObj->enKey("userid") . "=" . $uid);
 				setSession($uid);
-				setUserInfo($result);
 				if (isset($_POST['rememberme'])) {
 
 				}

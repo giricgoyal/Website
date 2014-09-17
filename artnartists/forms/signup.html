@@ -11,7 +11,7 @@
 							</tr>
 							<tr>
 								<td id="headBelow" colspan=6>
-									<span id="b1">Please fill the form below to complete registration.</span>
+									<span id="b1">It's almost done. Please fill the form below to complete registration.</span>
 								</td>
 							</tr>
 							<tr class="bodyPadding">
@@ -28,13 +28,13 @@
 									<span class="label">Name :</span>
 								</td>
 								<td id="body" class="inputtd">
-									<input id="firstname" type="text" name="firstname" value="" placeholder="First" class="inputTextLogin"/>
+									<input id="firstname" type="text" name="firstname" value="<?php echo $details2->{$dbObj->enKey("firstname")}?>" placeholder="First" class="inputTextLogin"/>
 								</td>
 								<td id="body" class="inputtd">
 									<input id="middlename" type="text" name="middlename" placeholder="Middle (optional)" class="inputTextLogin"/>
 								</td>
 								<td id="body" class="inputtd">
-									<input id="lastname" type="text" name="lastname" value="" placeholder="Last" class="inputTextLogin"/>
+									<input id="lastname" type="text" name="lastname" value="<?php echo $details2->{$dbObj->enKey("lastname")}?>" placeholder="Last" class="inputTextLogin"/>
 								</td>
 								<td>&nbsp</td>
 							</tr>
@@ -44,8 +44,11 @@
 									<span class="label">Gender :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
-									<input id="genderMale" type="radio" name="radiobutton"/>Male
-									<input id="genderFemale" type="radio" name="radiobutton"/>Female
+									<select size="1">
+										<option name="gender">Select</option>
+									  	<option name="gender" value="Male">Male</option>
+									  	<option name="gender" value="Female">Female</option>
+									</select>
 								</td>
 								<td>&nbsp</td>
 							</tr>
@@ -66,10 +69,72 @@
 									<span class="label">Email :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
-									<input id="email" type="email" name="email" value="" placeholder="Email address" class="inputTextLogin"/>
+									<input id="email" type="email" name="email" value="<?php echo $details2->{$dbObj->enKey("email")}?>" placeholder="Email address" class="inputTextLogin"/>
 								</td>
 								<td>&nbsp</td>
 							</tr>
+
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">Address :</span>
+								</td>
+								<td id="body" class="inputtd" colspan=3>
+									<input id="streetaddress1" type="text" name="streetaddress1" value="" placeholder="Street Address 1" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td id="body" class="inputtd" colspan=3>
+									<input id="streetaddress2" type="text" name="streetaddress2" value="" placeholder="Street Address 2 (optional)" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">Country :</span>
+								</td>
+								<td>
+									<select size="1">
+										<option name="country" value="India">India</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">State :</span>
+								</td>
+								<td>
+									<select size="1">
+										<option name="state" value="select">Select</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">City :</span>
+								</td>
+								<td>
+									<select size="1">
+										<option name="city" value="select">Select</option>
+									</select>
+									<input id="zipcode" type="text" name="zipcode" placeholder="Zip Code" class="inputTextLogin"/>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">Phone Number :</span>
+								</td>
+								<td id="body" class="inputtd" colspan=3>
+									<input id="phonenumber" type="text" name="phonenumber" placeholder="Enter your contact number" class="inputTextLogin"/>
+								</td>
+								<td>&nbsp</td>
+							</tr>
+
 							<tr>
 								<td id="bodyhead" colspan=4>
 									<span>Account Information</span>
@@ -81,14 +146,18 @@
 									<span class="label">Account Type :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
-									
+									<select size="1">
+										<option name="select">Select</option>
+									  	<option name="selectArtist" value="a">Artist</option>
+									  	<option name="selectCustomer" value="c">Customer</option>
+									</select>
 								</td>
 								<td>&nbsp</td>
 							</tr>
 							<tr>
 								<td></td>
 								<td id="body" class="bodyLeft">
-									<span class="label">Choose a username :</span>
+									<span class="label">Username :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
 									<input id="username" type="text" name="username" placeholder="Choose a username" class="inputTextLogin"/>
@@ -98,10 +167,30 @@
 							<tr>
 								<td></td>
 								<td id="body" class="bodyLeft">
-									<span class="label">Date of Birth :</span>
+									<span class="label">Re-enter username :</span>
 								</td>
 								<td id="body" class="inputtd" colspan=3>
-									
+									<input id="reenterusername" type="text" name="reenterusername" placeholder="Re-enter username" class="inputTextLogin"/>
+								</td>
+								<td>&nbsp</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">Password :</span>
+								</td>
+								<td id="body" class="inputtd" colspan=3>
+									<input id="password" type="password" name="password" value="<?php echo $details1->{$dbObj->enKey("password")}?>" placeholder="Password" class="inputTextLogin"/>
+								</td>
+								<td>&nbsp</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td id="body" class="bodyLeft">
+									<span class="label">Re-enter password :</span>
+								</td>
+								<td id="body" class="inputtd" colspan=3>
+									<input id="reenterpassword" type="password" name="reenterpassword" placeholder="Re-enter Password" class="inputTextLogin"/>
 								</td>
 								<td>&nbsp</td>
 							</tr>

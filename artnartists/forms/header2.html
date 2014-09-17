@@ -10,8 +10,18 @@
 				  </li> 
 				  <li id='<?php if ($currentpage == "shop")  { echo "currentpage"; } else { echo ""; } ?>'><a href="<?php echo $SITE_SHOP_BASE_URL?>">Shop</a>
 				  </li> 
+				  <?php 
+				  	if (getSessionId() == null) {
+				  ?>
 				  <li id='<?php if ($currentpage == "login")  { echo "currentpage"; } else { echo ""; } ?>'><a href="<?php echo $SITE_LOGIN_BASE_URL?>">Login</a>
-				  </li> 
+				  </li>
+				  <?php 
+					}
+					else {
+				  ?> 
+				  <li id='<?php if ($currentpage == "login")  { echo "currentpage"; } else { echo ""; } ?>'><a href="<?php echo $SITE_LOGIN_BASE_URL?>">Account</a>
+				  </li>
+				  <?php } ?>
 				  <li id='<?php if ($currentpage == "contactus")  { echo "currentpage"; } else { echo ""; } ?>'><a href="<?php echo $SITE_CONTACTUS_BASE_URL?>">ContactUs</a>
 				  </li> 
 				</ul>   

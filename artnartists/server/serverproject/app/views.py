@@ -1,9 +1,9 @@
 # imports
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from app.models import UserAccount, CustomerAccountInfo, ArtistAccountInfo, UserAccountInfo
+from app.models import UserAccount, CustomerAccountInfo, ArtistAccountInfo, UserAccountInfo, Addresses
 from rest_framework import viewsets, filters
-from app.serializers import UserSerializer, UserAccountSerializer, UserAccountInfoSerializer, CustomerAccountInfoSerializer, ArtistAccountInfoSerializer
+from app.serializers import UserSerializer, UserAccountSerializer, UserAccountInfoSerializer, CustomerAccountInfoSerializer, ArtistAccountInfoSerializer, AddressesSerializer
 
 # user view set
 class UserViewSet(viewsets.ModelViewSet):
@@ -28,7 +28,16 @@ class UserAccountInfoViewSet(viewsets.ModelViewSet):
 	serializer_class = UserAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+	filter_fields = ('userid', 'firstname', 'middlename', 'lastname', 'gender', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+
+#Addresses view set
+class AddressesViewSet(viewsets.ModelViewSet):
+	queryset = Addresses.objects.all()
+	serializer_class = AddressesSerializer
+	#apply filters
+	filter_backends = (filters.DjangoFilterBackend,) #filter to be applied on backend as well
+	filter_fields = ('addressid', 'userid', 'addresstype',  'addressline1', 'addressline2', 'country', 'state', 'city', 'zipcode')
+
 
 # Customer account info view set
 class CustomerAccountInfoViewSet(viewsets.ModelViewSet):
@@ -36,7 +45,7 @@ class CustomerAccountInfoViewSet(viewsets.ModelViewSet):
 	serializer_class = CustomerAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+	filter_fields = ('userid', 'firstname') # specify filter fields
 
 # artist account info view set
 class ArtistAccountInfoViewSet(viewsets.ModelViewSet):
@@ -44,7 +53,7 @@ class ArtistAccountInfoViewSet(viewsets.ModelViewSet):
 	serializer_class = ArtistAccountInfoSerializer
 	# apply filters
 	filter_backends = (filters.DjangoFilterBackend,) # filter to be applied on backend as well
-	filter_fields = ('userid', 'firstname', 'lastname', 'email', 'phonenumber', 'datetimejoined') # specify filter fields
+	filter_fields = ('userid', 'firstname') # specify filter fields
 
 
 

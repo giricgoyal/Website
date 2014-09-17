@@ -7,7 +7,7 @@
 
 	include $SITE_FORMS . "/header.html";
 	include $SITE_FORMS . "/header2.html";
-	include $SITE_FORMS . "/ContactUs.html";
+	include $SITE_FORMS . "/contactus.html";
 
 
 	if (isset($_POST[''])) {

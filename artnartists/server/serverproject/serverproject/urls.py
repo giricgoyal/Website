@@ -11,6 +11,7 @@ router = routers.DefaultRouter()
 router.register(r'users',views.UserViewSet)
 router.register(r'useraccount',views.UserAccountViewSet)
 router.register(r'useraccountinfo',views.UserAccountInfoViewSet)
+router.register(r'addresses',views.AddressesViewSet)
 router.register(r'customeraccountinfo',views.CustomerAccountInfoViewSet)
 router.register(r'artistaccountinfo',views.ArtistAccountInfoViewSet)
 
