@@ -4,14 +4,10 @@
 
 	// variables
 	$name = "";
-
-
+	
 	// functions
 	function setSession($nm) {
-		global $name;
-
-		$_SESSION["name"] = $nm;
-		$name = $nm;
+		$_SESSION["uid"] = $nm;
 	}
 
 	function destroySession() {
@@ -19,31 +15,25 @@
 		session_destroy();
 	}
 
-	function getSessionName() {
-		global $name;
-		if (isset($_SESSION["name"])) {
-			return $_SESSION["name"];
+	function getSessionId() {
+		if (isset($_SESSION["uid"])) {
+			return $_SESSION["uid"];
 		}
 		else {
-			return $name;	
+			return null;	
 		}
 	}
 
-	function setAttempt($val) {
-		if ($val == 0) {
-			$_SESSION["attempts"] = $val;
-		}
-		else {
-			$_SESSION["attempts"] = $_SESSION["attempts"] + 1;
-		}
+	function setQueryId($id) {
+		$_SESSION["qid"] = $id;
 	}
 
-	function getAttempts() {
-		if (isset($_SESSION["attempts"])) {
-			return $_SESSION["attempts"];
+	function getQueryId() {
+		if ($_SESSION["qid"] != "") {
+			return $_SESSION["qid"];
 		}
 		else {
-			return 0;
+			return null;	
 		}
 	}
 
@@ -53,5 +43,17 @@
 	}
 	else {
 		$name = "";	
+	}
+
+
+	function setSignupDetails($fn, $ln, $em, $ps) {
+		$val = $fn . ":" . $ln . ":" . $em . ":" . $ps;
+		$_SESSION["signupDetails"] = $val;
+	}
+
+	function getSignupDetails() {
+		$val = $_SESSION["signupDetails"];
+		$valArr = explode(":", $val);
+		return $valArr;
 	}
 ?>

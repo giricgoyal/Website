@@ -14,6 +14,8 @@
 		$SITE_ADDR = $_SERVER['SERVER_NAME'] . "/" . $SITE_NAME;
 	}
 	
+	$DB_SERVER			= 	"http://127.0.0.1:8000";
+	$DB_SERVER_USER		=	$DB_SERVER . "/useraccount/";
 	
 	$SITE_BASE 			= 	realpath($_SERVER["DOCUMENT_ROOT"]) . "/" . $SITE_NAME;
 	$SITE_INCLUDE 		= 	$SITE_BASE . "/include";
