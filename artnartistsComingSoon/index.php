@@ -6,7 +6,7 @@
 
 	$currentpage = "art";
 	$url = $SITE_BASE_URL . "?";
-	if (isset($_SERVER['QUERY_STRING'])) {
+	if (isset($_SESSION['id'])) {
 		setQueryId($_SERVER['QUERY_STRING']);
 	}
 
@@ -16,25 +16,22 @@
 	
 	if (isset($_POST["submit"])) {
 		if ($_POST["name"] != "" && $_POST["email"] != "") {
-			$requestId = getQueryId();
-			if ($requestId != "") {
-				$result = $dbObj->get($DB_SERVER_USER . "?" . $dbObj->enKey("userid") . "=" . $requestId);
-				print_r($result);
-				if ($result != null) {
-					$friends = $dbObj->enVal($dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("friends")}) + 1);
-					$details = [
-								$dbObj->enKey("friends") => $friends 
-								];
-					$url = $dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("url")});
-					echo $url;
-					$dbObj->put($url, $details);
-				}
-			}
 			$name = $dbObj->enVal($_POST["name"]);
 			$email = $dbObj->enVal($_POST["email"]);
 			$friends = 0;
 			$result = $dbObj->get($DB_SERVER_USER . "?". $dbObj->enKey("email") . "=" . $email);
 			if ($result == null) {
+
+				$requestId = getQueryId();
+				if ($requestId != "") {
+					$result = $dbObj->get($DB_SERVER_USER . "?" . $dbObj->enKey("userid") . "=" . $requestId);
+					if ($result != null) {
+						$result->{"results"}[0]->{$dbObj->enKey("friends")} = $dbObj->enVal($dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("friends")}) + 1);
+						$serUrl = $dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("url")});
+						$dbObj->put($serUrl, $result->{"results"}[0]);
+					}
+				}
+
 				$id = $dbObj->enVal($dbObj->getRandomId());
 				$friends = $dbObj->enVal($friends);
 				$details = [
@@ -43,13 +40,16 @@
 							$dbObj->enKey("name") => $name,
 							$dbObj->enKey("friends") => $friends
 							];
-				//$dbObj->post($DB_SERVER_USER, $details);
+				$dbObj->post($DB_SERVER_USER, $details);
 				$url = $url . $id;
+				include $SITE_FORMS . "/signup.html";
 			}
 			else {
+				$id = $dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("userid")});
+				$url = $url . $id;
+				include $SITE_FORMS . "/signup.html";
 			}
 		}
-		include $SITE_FORMS . "/signup.html";
 	}
 	else {
 		include $SITE_FORMS . "/art.html";

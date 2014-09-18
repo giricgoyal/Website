@@ -1,0 +1,54 @@
+	<body>
+		<form action="<?php echo $SITE_BASE_URL ?>/index.php" method="post"-->
+			<table class="paddingTable">
+				<tr><td></td></tr>
+			</table>
+
+			<table class="shareBody">
+				<tr>
+					<td>
+						<span id="ty">Thank you for signing up!</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>We will send you an email soon. </span>
+					</td>
+				</tr>
+				<tr><td></td></tr>
+				<tr>
+					<td>
+						<span>Invite 3 friends and get early access!</span>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<input id="shareLink" value="<?php echo $url ?>" readonly/>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<span>Share: </span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="mailto:?subject=Check out&body=Body-goes-here <?php echo $url?>">
+							<img src="<?php echo $SITE_IMAGE_URL?>/mail.png" class="scaleShare"/>
+						</a>&nbsp
+						<img src="<?php echo $SITE_IMAGE_URL?>/facebook.png" class="scaleShare"/>&nbsp
+						<img src="<?php echo $SITE_IMAGE_URL?>/Twitter.png" class="scaleShare"/>
+					</td>
+				</tr>
+				<tr><td></td></tr>
+			</table>
+			<table class="socialTable">
+				<tr>
+					<td colspan=2><span>Visit us at:</span>&nbsp
+						<a href="https://www.facebook.com/artndartists" target="_blank"><img src="<?php echo $SITE_IMAGE_URL?>/facebook.png" class="scale"/></a>
+						<a href="https://twitter.com/art_n_artists" target="_blank"><img src="<?php echo $SITE_IMAGE_URL?>/Twitter.png" class="scale"/></a>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>

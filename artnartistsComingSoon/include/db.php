@@ -108,8 +108,6 @@
 			}
 			curl_close($curl);
 
-			print_r($response);
-
 		}
 
 

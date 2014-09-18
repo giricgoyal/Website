@@ -2,9 +2,6 @@
 	// includes
 	include 'variables.php';
 
-	// variables
-	$name = "";
-	
 	// functions
 	function setSession($nm) {
 		$_SESSION["uid"] = $nm;
@@ -25,8 +22,9 @@
 	}
 
 	function setQueryId($id) {
-		$_SESSION["qid"] = $id;
-	}
+		if ($id != "")
+			$_SESSION["qid"] = $id;
+	}	
 
 	function getQueryId() {
 		if ($_SESSION["qid"] != "") {
@@ -37,23 +35,12 @@
 		}
 	}
 
+	//session_start();
 	session_start();
 	if (isset($_SESSION["name"])) {
-		$name = $_SESSION["name"];
+
 	}
 	else {
-		$name = "";	
-	}
-
-
-	function setSignupDetails($fn, $ln, $em, $ps) {
-		$val = $fn . ":" . $ln . ":" . $em . ":" . $ps;
-		$_SESSION["signupDetails"] = $val;
-	}
-
-	function getSignupDetails() {
-		$val = $_SESSION["signupDetails"];
-		$valArr = explode(":", $val);
-		return $valArr;
+		$_SESSION["name"] = "id";
 	}
 ?>

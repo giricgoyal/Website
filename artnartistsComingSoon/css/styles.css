@@ -66,6 +66,17 @@ html
   width: 960px;
 }
 
+.shareBody {
+  border: 0px white solid;
+  margin: auto;
+  width: 960px;
+}
+
+.socialTable {
+  border: 0px white solid;
+  margin: auto;
+  width: 960px;
+}
 
 .footer
 {
@@ -96,10 +107,8 @@ html
 
 .mainBody tr td {
   height: 30px;
-  text-align: center;
   vertical-align: center;
   font-family: verdana;
-  border: 0px solid white;
 }
 
 .mainBody tr td span {
@@ -108,12 +117,51 @@ html
   font-family: verdana;
 }
 
+.shareBody tr td {
+  height: 30px;
+  text-align: center;
+  font-family: verdana;
+  color: #ededed;
+  font-size: 1em;
+}
+
+.shareBody tr td a{
+  text-decoration: none;
+}
+
+.shareBody tr td span#ty{
+  height: 30px;
+  text-align: center;
+  font-family: verdana;
+  color: #ededed;
+  font-size: 2em;
+}
+
+.shareBody tr td input#shareLink {
+  border: 0px solid white;
+  text-align: center;
+  height: 50px;
+  width: 700px;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #ffce00;
+  background-color: #919191;
+}
+
 .mainBody tr td span a {
  text-decoration: none;
 }
 
+.socialTable tr td {
+  text-align: center;
+  color: #ededed;
+  font-size: 1em;
+  font-family: verdana;
+
+}
+
 .textinput {
-  width: 40%;
+  width: 100%;
   height: 30px;
   border: 0px;
   border-radius: 5px;
@@ -132,7 +180,7 @@ html
   height: 30px;
   border: 0px;
   border-radius: 5px;
-  width: 10%;
+  width: 100px;
   cursor: hand;
   cursor: pointer;
   background-color: #fefefe;
@@ -144,7 +192,7 @@ html
   height: 30px;
   border: 0px;
   border-radius: 5px;
-  width: 10%;
+  width: 100px;
   cursor: hand;
   cursor: pointer;
   background-color: #fffe00;
@@ -156,4 +204,24 @@ html
 {
   height: 30px;
   width: 30px;
+}
+
+.scaleShare {
+  height: 40px;
+  width: 40px;
+}
+
+.right {
+  padding-right: 20px;
+  padding-left: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+.left {
+  padding-right: 20px;
+  padding-left: 20px;
+  text-align: justify;
+  width: 50%;
+  border-right: 0px solid white;
 }
