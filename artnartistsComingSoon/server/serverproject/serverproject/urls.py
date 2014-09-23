@@ -10,6 +10,7 @@ admin.autodiscover()
 router = routers.DefaultRouter()
 router.register(r'users',views.UserViewSet)
 router.register(r'useraccount',views.UserAccountViewSet)
+router.register(r'adminaccount',views.AdminAccountViewSet)
 
 # url patterns
 urlpatterns = patterns('',

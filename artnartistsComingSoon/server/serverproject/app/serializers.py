@@ -2,7 +2,7 @@ __author__ = 'giric'
 
 # imports
 from django.contrib.auth.models import User
-from app.models import UserAccount
+from app.models import UserAccount, AdminAccount
 from rest_framework import serializers
 
 
@@ -21,3 +21,11 @@ class UserAccountSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		model = UserAccount
 		fields = ('url', 'userid', 'email', 'name', 'friends', 'datetimejoined')
+
+# Admin Account Serializer
+class AdminAccountSerializer(serializers.HyperlinkedModelSerializer):
+	api_url = serializers.SerializerMethodField('get_api_url')
+
+	class Meta:
+		model = AdminAccount
+		fields = ('url', 'userid', 'username', 'password')

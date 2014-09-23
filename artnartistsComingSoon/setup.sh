@@ -14,6 +14,7 @@ echo "... Installing packages ..."
 pip install django
 pip install djangorestframework
 pip install django-filter
+pip install pycrypto
 if [ ! -d "$PROJECT" ]; then
 	django-admin.py startproject $PROJECT
 	echo "... $PROJECT project created ..."

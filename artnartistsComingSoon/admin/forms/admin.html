@@ -1,0 +1,51 @@
+	<link rel="stylesheet" href="<?php echo $SITE_ADMIN_CSS_URL ?>/styles.css" type="text/css" media="screen" />
+	<body>
+		<form action="<?php echo $SITE_ADMIN_URL?>/index.php" method="post"-->
+			<table id="signin" >
+				<tr>
+					<td>
+						Welcome
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Count : <?php if ($result != null) { echo $count; } ?>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--<button type="submit" id="deleteall" name="deleteall" >Delete All</button>-->
+					</td>
+				</tr>
+			</table>
+			<table class="showall">
+				<tr id="head">
+					<td>Link</td>
+					<td>Id</td>
+					<td>Email</td>
+					<td>Name</td>
+					<td>Friends</td>
+				</tr>
+				<?php 
+				if ($result != null) {
+					foreach ($resultArr as $singleton) {
+						echo "<tr>
+								<td> <a href='" . ($singleton->{"url"}) . "'>Link</a>
+								</td>
+								<td>" . $dbObj->deVal($singleton->{"userid"}, $enK, false) .
+								"</td>
+								<td>" . $dbObj->deVal($singleton->{"email"}, $enK, true) .
+								"</td>
+								<td>" . $dbObj->deVal($singleton->{"name"}, $enK, true) .
+								"</td>
+								<td>" . $dbObj->deVal($singleton->{"friends"}, $enK, true) .
+								"</td>
+								<td>" . ($singleton->{"datetimejoined"}) .
+								"</td>
+							</tr>"; 
+					}
+				}
+				?>
+			</table>
+		</form-->
+	</body>

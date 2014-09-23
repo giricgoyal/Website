@@ -8,7 +8,7 @@
 	}
 
 	function destroySession() {
-		session_start();
+		//session_start();
 		session_destroy();
 	}
 
@@ -22,13 +22,12 @@
 	}
 
 	function setQueryId($id) {
-		if ($id != "")
-			$_SESSION["qid"] = $id;
+		$_SESSION["name"] = $id;
 	}	
 
 	function getQueryId() {
-		if ($_SESSION["qid"] != "") {
-			return $_SESSION["qid"];
+		if ((isset($_SESSION["name"])) && ($_SESSION["name"] != "")) {
+			return $_SESSION["name"];
 		}
 		else {
 			return null;	
@@ -41,6 +40,6 @@
 
 	}
 	else {
-		$_SESSION["name"] = "id";
+		$_SESSION["name"] = "";
 	}
 ?>

@@ -27,18 +27,19 @@ html
 }
 
 .headertable tr td#img img{
-  position: absolute;
-  top: 200px;
-  margin-left: -75px;
+  position: relative;
+  top: 60px;
+  margin-left: 0px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px #000000;
 }
 
 .headertable tr td#comingsoon span{
+  position: relative;
   font-size: 3em;
   font-family: Verdana;
   border-radius: 10px;
- 
+  top: 20px;
 }
 
 .headertable tr td#artnartists {
@@ -49,6 +50,8 @@ html
 }
 
 .headertable tr td#artnartists span{
+  position: relative;
+  top: 30px;
   font-size: 2em;
   font-family: Verdana;
   border-radius: 10px;
@@ -127,6 +130,7 @@ html
 
 .shareBody tr td a{
   text-decoration: none;
+  border: 0px;
 }
 
 .shareBody tr td span#ty{
@@ -224,4 +228,9 @@ html
   text-align: justify;
   width: 50%;
   border-right: 0px solid white;
+}
+
+.nolink {
+  text-decoration: none;
+  border: 0px;
 }
