@@ -1,6 +1,7 @@
 html
 {
  background: url("../images/backgroundimage.jpg") fixed;
+ opacity: 60%;
 }
 
 .headertable
@@ -8,7 +9,7 @@ html
 	border: 0px solid black;
 	width: 100%;
 	min-width: 960px;
-  height: 300px;
+  height: 200px;
   min-height: 200px;
   background: url("../images/header1.png") fixed;
   background-size: 100%;
@@ -233,4 +234,13 @@ html
 .nolink {
   text-decoration: none;
   border: 0px;
+}
+
+.fbshare {
+  border: 1px white solid;
+  width: 40px;
+  height: 40px;
+  background: url(../images/facebook.png);
+  background-size: 40px 40px;
+  display: block;
 }
