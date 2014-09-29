@@ -1,25 +1,50 @@
 import os
+import sys
 
 project = 'serverproject'
 app = 'app'
+server = 'server'
 
 def checkDir(dir):
-	if (os.path.isdir(dir)):
-		return True
-	return False
+	try:
+		if (os.path.isdir(dir)):
+			return True
+		return False
+	except Exception as e:
+		print "Check Dir Exception : ", e
 	
 def checkFile(file):
-	if (os.path.exists(file)):
-		return True
-	return False
+	try:
+		if (os.path.exists(file)):
+			return True
+		return False
+	except Exception as e:
+		print "Check File Exception : ", e
 		
 
 def setup():
-	if (checkDir("server")):
-		print "server"
+	try :
+		if (checkDir(server)):
+			print server, " dir already present"
+		else:
+			os.makedirs(server)
+			print server, " dir created"
+		
+		if (os.name == "nt"):
+			print "a"
+		elif os.name == "posix":
+			print "b"
+		print os.name
+		print sys.platform
+	except Exception as e:
+		print "Setup Exception : ", e
 	
 def runserver():
-	print "running server\n"
+	try :
+		print "running server\n"
+	except Exception as e:
+		print "Setup Exception : ", e
+	
 	
 setup()
 runserver()
