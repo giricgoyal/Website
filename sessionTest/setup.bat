@@ -14,6 +14,7 @@ IF EXIST envWin GOTO s2
 :s2
 echo ... Activating virtual env ...
 envWin\Scripts\activate
+setupStep2.bat
 echo ... Installing Packages ...
 pip install django
 pip install djangorestframework
