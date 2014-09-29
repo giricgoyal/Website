@@ -1,17 +1,34 @@
 import os
 import sys
+import platform 
+import shutil
 
 project = 'serverproject'
 app = 'app'
 server = 'server'
+envNt = 'envWin'
+envPosix = 'env'
+env = ''
+envActivate = ''
+packages = [
+			'pip install django',
+			'pip install djangorestframework',
+			'pip install django-filter'
+			]
 
+def debugLog(val):
+	print "Logger : " + val
+
+def debugError(val, e):
+	print "Error : " + val + str(e)
+	
 def checkDir(dir):
 	try:
 		if (os.path.isdir(dir)):
 			return True
 		return False
 	except Exception as e:
-		print "Check Dir Exception : ", e
+		debugError("Check Dir Exception : ", e)
 	
 def checkFile(file):
 	try:
@@ -19,31 +36,71 @@ def checkFile(file):
 			return True
 		return False
 	except Exception as e:
-		print "Check File Exception : ", e
+		debugError("Check File Exception : ", e);
 		
 
 def setup():
+	global env, envActivate
 	try :
+		debugLog("\nSystem:")
+		debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()) + "\n")
 		if (checkDir(server)):
-			print server, " dir already present"
+			debugLog(server + " dir already present")
 		else:
 			os.makedirs(server)
-			print server, " dir created"
-		
+			debugLog(server + " dir created")
+	
 		if (os.name == "nt"):
-			print "a"
+			env = server + '/' + envNt
+			envActivate = env + '/Scripts/activate_this.py'
 		elif os.name == "posix":
-			print "b"
-		print os.name
-		print sys.platform
+			env = server + '/' + envPosix
+			envActivate = env + '/bin/activate_this.py'
+		
+		if (checkDir(env)):
+			pass
+		else:
+			debugLog("Setting up " + env)
+			os.system('virtualenv ' + env)
+		
+		debugLog("Activating virtual env")
+		execfile(envActivate, dict(__file__=envActivate))
+		debugLog("Virtual env active")
+		debugLog("Installing packages")
+		for package in packages:
+			os.system(package)
+		debugLog("Packages installed")
+		
+		debugLog("Creating project")
+		os.chdir(server)
+		if (checkDir(project)):
+			debugLog("Project " + project + " already created")
+		else:
+			os.system('django-admin.py startproject ' + project)
+			debugLog("Project " + project + " created")
+		
+		debugLog("Creating app")
+		os.chdir(project)
+		if (checkDir(app)):
+			debugLog("App " + app + " already created")
+		else:
+			os.system('python manage.py startapp ' + app)
+			debugLog("App " + app + " started")
+		
+		if (checkFile('__init__.py')):
+			debugLog("__init__.py already present")
+		else:
+			shutil.copyfile(app + "/__init__.py","__init__.py")
+			debugLog("__init__.py created")
+		
 	except Exception as e:
-		print "Setup Exception : ", e
+		debugError("Setup Exception : ", e)
 	
 def runserver():
 	try :
-		print "running server\n"
+		debugLog("running server\n")
 	except Exception as e:
-		print "Setup Exception : ", e
+		debugError("Setup Exception : ", e)
 	
 	
 setup()
