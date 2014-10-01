@@ -4,7 +4,7 @@ import platform
 import shutil
 from Tkinter import *
 import thread, time
-	
+
 class ManageApp(Frame):
 	__project = ''
 	__app = ''
@@ -15,13 +15,13 @@ class ManageApp(Frame):
 	__envActivate = ''
 	__stopserver = None
 	__packages = []
-				
+
 	def debugLog(self, val):
 		print "Logger : " + val
 
 	def debugError(self, val, e):
 		print "Error : " + val + str(e)
-	
+
 	def __getEnv(self):
 		return self.__env, self.__envActivate
 
@@ -94,10 +94,10 @@ class ManageApp(Frame):
 
 		except Exception as e:
 			self.debugError("Setup Exception : ", e)
-			
+
 	def __setupSub(self):
 		thread.start_new_thread(self.__setup, ())
-	
+
 	def __runserver(self):
 		try :
 			env, envActivate = self.__getEnv()
@@ -109,42 +109,42 @@ class ManageApp(Frame):
 			os.system("python manage.py runserver")
 		except Exception as e:
 			self.debugError("Run Server Exception : ", e)
-			
+
 	def __runserverSub(self):
 		thread.start_new_thread(self.__runserver, ())
-		
+
 	def __stopserverFunc(self):
 		try:
 			self.debugLog("Stopping server")
 			os.kill(0, self.__stopserver)
 		except Exception as e:
 			self.debugError("Stop server Exception : ", e)
-		
+
 	def __createWidgets(self):
 		self.SETUPB = Button(self)
 		self.SETUPB["text"] = "Setup"
 		self.SETUPB["fg"] = "black"
 		self.SETUPB["command"] = self.__setupSub
 		self.SETUPB.pack({"side": "left"})
-		
+
 		self.RUNSERVER = Button(self)
 		self.RUNSERVER["text"] = "Run Server"
 		self.RUNSERVER["fg"] = "black"
 		self.RUNSERVER["command"] = self.__runserverSub
 		self.RUNSERVER.pack({"side": "left"})
-		
+
 		self.STOPSERVER = Button(self)
 		self.STOPSERVER["text"] = "Stop Server"
 		self.STOPSERVER["fg"] = "black"
 		self.STOPSERVER["command"] = self.__stopserverFunc
 		self.STOPSERVER.pack({"side": "left"})
-		
+
 		self.QUIT = Button(self)
 		self.QUIT["text"] = "Quit"
 		self.QUIT["fg"]   = "red"
 		self.QUIT["command"] =  self.quit
 		self.QUIT.pack({"side": "left"})
-		
+
 	def __init(self):
 		try:
 			self.__project = 'serverproject'
@@ -160,7 +160,7 @@ class ManageApp(Frame):
 
 			self.debugLog("System Info")
 			self.debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()) + "\n")
-			
+
 			if (os.name == "nt"):
 				self.__env = self.__server + '/' + self.__envNt
 				self.__envActivate = self.__env + '/Scripts/activate_this.py'
@@ -168,18 +168,18 @@ class ManageApp(Frame):
 			elif os.name == "posix":
 				self.__env = self.__server + '/' + self.__envPosix
 				self.__envActivate = self.__env + '/bin/activate_this.py'
-				self.__stopserver = signal.CTRL_C_EVENT
-			
+				self.__stopserver = None
+
 		except Exception as e:
 			self.debugError("System Exception : ", e)
-			
-			
+
+
 	def __init__(self, master=None):
 		Frame.__init__(self, master)
 		self.pack()
 		self.__init()
 		self.__createWidgets()
-		
+
 
 
 root = Tk()
