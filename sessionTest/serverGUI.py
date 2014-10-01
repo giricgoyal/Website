@@ -11,9 +11,12 @@ class ManageApp(Frame):
 	__server = ''
 	__envNt = ''
 	__envPosix = ''
+	__pythonEnv = ''
 	__env = ''
 	__envActivate = ''
 	__stopserver = None
+	__websiteProject = ''
+	__myPath = ''
 	__packages = []
 
 	def debugLog(self, val):
@@ -47,15 +50,15 @@ class ManageApp(Frame):
 			self.debugError("Check File Exception : ", e);
 
 
-	def __setup(self):
+	def __setupEnv(self):
 		try :
-			env, envActivate = self.__getEnv()
-			if (self.__checkDir(self.__server)):
-				self.debugLog(self.__server + " dir already present")
+			env, envActivate = self.__getEnv()		
+			if (self.__checkDir(self.__pythonEnv)):
+				pass
 			else:
-				os.makedirs(self.__server)
-				self.debugLog(self.__server + " dir created")
-
+				self.debugLog("Creating pythonEnv dir")
+				os.makedirs(self.__pythonEnv)
+			
 			if (self.__checkDir(env)):
 				pass
 			else:
@@ -70,6 +73,39 @@ class ManageApp(Frame):
 				os.system(package)
 			self.debugLog("Packages installed")
 
+		except Exception as e:
+			self.debugError("Setup Exception : ", e)
+
+	def __setupEnvSub(self):
+		thread.start_new_thread(self.__setupEnv, ())
+		
+		
+	def __setupServer(self):
+		try :
+			env, envActivate = self.__getEnv()
+			if (self.__checkDir(self.__server)):
+				self.debugLog(self.__server + " dir already present")
+			else:
+				os.makedirs(self.__server)
+				self.debugLog(self.__server + " dir created")
+			
+			if (self.__checkDir(env)):
+				self.debugLog("Activating virtual env")
+				execfile(envActivate, dict(__file__=envActivate))
+				self.debugLog("Virtual env active")
+			else:
+				self.debugLog("Setting up " + env)
+				os.system('virtualenv ' + env)
+
+				self.debugLog("Activating virtual env")
+				execfile(envActivate, dict(__file__=envActivate))
+				self.debugLog("Virtual env active")
+				self.debugLog("Installing packages")
+				for package in self.__packages:
+					os.system(package)
+				self.debugLog("Packages installed")
+			
+			
 			self.debugLog("Creating project")
 			os.chdir(self.__server)
 			if (self.__checkDir(self.__project)):
@@ -91,17 +127,16 @@ class ManageApp(Frame):
 			else:
 				shutil.copyfile(self.__app + "/__init__.py","__init__.py")
 				self.debugLog("__init__.py created")
-
+			
 		except Exception as e:
 			self.debugError("Setup Exception : ", e)
 
-	def __setupSub(self):
-		thread.start_new_thread(self.__setup, ())
+	def __setupServerSub(self):
+		thread.start_new_thread(self.__setupServer, ())
 
 	def __runserver(self):
 		try :
 			env, envActivate = self.__getEnv()
-			os.chdir("../..")
 			self.debugLog("Activating Virtual env")
 			execfile(envActivate, dict(__file__=envActivate))
 			self.debugLog("Running server")
@@ -121,11 +156,17 @@ class ManageApp(Frame):
 			self.debugError("Stop server Exception : ", e)
 
 	def __createWidgets(self):
-		self.SETUPB = Button(self)
-		self.SETUPB["text"] = "Setup"
-		self.SETUPB["fg"] = "black"
-		self.SETUPB["command"] = self.__setupSub
-		self.SETUPB.pack({"side": "left"})
+		self.SETUPENV = Button(self)
+		self.SETUPENV["text"] = "Setup Virtual Env"
+		self.SETUPENV["fg"] = "black"
+		self.SETUPENV["command"] = self.__setupEnvSub
+		self.SETUPENV.pack({"side": "left"})
+		
+		self.SETUPSERVER = Button(self)
+		self.SETUPSERVER["text"] = "Setup Server"
+		self.SETUPSERVER["fg"] = "black"
+		self.SETUPSERVER["command"] = self.__setupServerSub
+		self.SETUPSERVER.pack({"side": "left"})
 
 		self.RUNSERVER = Button(self)
 		self.RUNSERVER["text"] = "Run Server"
@@ -147,9 +188,12 @@ class ManageApp(Frame):
 
 	def __init(self):
 		try:
+			self.__myPath = os.getcwd()
+			self.__websiteProject = self.__myPath[(self.__myPath.rfind('\\') if os.name == "nt" else self.__myPath.rfind('/'))+1:]
 			self.__project = 'serverproject'
 			self.__app = 'app'
-			self.__server = 'server'
+			self.__server = self.__myPath + '/../' + self.__websiteProject + 'Server'
+			self.__pythonEnv = self.__myPath + '/../../pythonEnv/' + self.__websiteProject 
 			self.__envNt = 'envWin'
 			self.__envPosix = 'env'
 			self.__packages = [
@@ -160,14 +204,16 @@ class ManageApp(Frame):
 					]
 
 			self.debugLog("System Info")
-			self.debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()) + "\n")
-
+			self.debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()))
+			self.debugLog("Project: " + self.__websiteProject)
+			self.debugLog("Setting path: " + self.__myPath)
+			
 			if (os.name == "nt"):
-				self.__env = self.__server + '/' + self.__envNt
+				self.__env = self.__pythonEnv + "/" + self.__envNt
 				self.__envActivate = self.__env + '/Scripts/activate_this.py'
 				self.__stopserver = signal.CTRL_BREAK_EVENT
 			elif os.name == "posix":
-				self.__env = self.__server + '/' + self.__envPosix
+				self.__env = self.__pythonEnv + "/" + self.__envPosix
 				self.__envActivate = self.__env + '/bin/activate_this.py'
 				self.__stopserver = None
 

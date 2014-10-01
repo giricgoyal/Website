@@ -2,5 +2,3 @@
 
 echo Running manager
 serverGUI.py
-
-pause
