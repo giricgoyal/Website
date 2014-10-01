@@ -1,7 +1,4 @@
 #!/bin/bash
 
-cd server
-source env/bin/activate
-cd serverproject
-python manage.py runserver
-
+echo "Running Server"
+python serverGUI.py
