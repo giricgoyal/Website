@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "Running Server"
-python serverGUI.py
+python manager.py
