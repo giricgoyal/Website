@@ -7,8 +7,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-*/env/
-*/envWin/
+*/env/*
+*/envWin/*
 build/
 develop-eggs/
 dist/
