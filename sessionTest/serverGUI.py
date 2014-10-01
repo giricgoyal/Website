@@ -17,10 +17,10 @@ class ManageApp(Frame):
 	__packages = []
 
 	def debugLog(self, val):
-		print "Logger : " + val
+		print("Logger : " + val)
 
 	def debugError(self, val, e):
-		print "Error : " + val + str(e)
+		print("Error : " + val + str(e))
 
 	def __getEnv(self):
 		return self.__env, self.__envActivate
