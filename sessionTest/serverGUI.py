@@ -1,144 +1,189 @@
-import os
+import os, signal
 import sys
 import platform
 import shutil
-import Tkinter
+from Tkinter import *
+import thread, time
+	
+class ManageApp(Frame):
+	__project = ''
+	__app = ''
+	__server = ''
+	__envNt = ''
+	__envPosix = ''
+	__env = ''
+	__envActivate = ''
+	__stopserver = None
+	__packages = []
+				
+	def debugLog(self, val):
+		print "Logger : " + val
 
-project = 'serverproject'
-app = 'app'
-server = 'server'
-envNt = 'envWin'
-envPosix = 'env'
-env = ''
-envActivate = ''
-packages = [
-			'pip install django',
-			'pip install djangorestframework',
-			'pip install django-filter'
-			]
+	def debugError(self, val, e):
+		print "Error : " + val + str(e)
+	
+	def __getEnv(self):
+		return self.__env, self.__envActivate
 
-
-def debugLog(val):
-	print "Logger : " + val
-
-def debugError(val, e):
-	print "Error : " + val + str(e)
-
-
-try:
-	debugLog("System Info")
-	debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()) + "\n")
-	if (os.name == "nt"):
-		env = server + '/' + envNt
-		envActivate = env + '/Scripts/activate_this.py'
-	elif os.name == "posix":
-		env = server + '/' + envPosix
-		envActivate = env + '/bin/activate_this.py'
-except Exception as e:
-	debugError("System Exception : ", e)
+	def __getStopServer(self):
+		return self.__stopserver
 
 
-
-def getEnv():
-	global env, envActivate
-	return env, envActivate
-
-
-def checkDir(dir):
-	try:
-		if (os.path.isdir(dir)):
-			return True
-		return False
-	except Exception as e:
-		debugError("Check Dir Exception : ", e)
+	def __checkDir(self, dir):
+		try:
+			if (os.path.isdir(dir)):
+				return True
+			return False
+		except Exception as e:
+			self.debugError("Check Dir Exception : ", e)
 
 
-def checkFile(file):
-	try:
-		if (os.path.exists(file)):
-			return True
-		return False
-	except Exception as e:
-		debugError("Check File Exception : ", e);
+	def __checkFile(self, file):
+		try:
+			if (os.path.exists(file)):
+				return True
+			return False
+		except Exception as e:
+			self.debugError("Check File Exception : ", e);
 
 
-def setup():
-	env, envActivate = getEnv()
-	try :
-		if (checkDir(server)):
-			debugLog(server + " dir already present")
-		else:
-			os.makedirs(server)
-			debugLog(server + " dir created")
+	def __setup(self):
+		try :
+			env, envActivate = self.__getEnv()
+			if (self.__checkDir(self.__server)):
+				self.debugLog(self.__server + " dir already present")
+			else:
+				os.makedirs(self.__server)
+				self.debugLog(self.__server + " dir created")
 
-		if (checkDir(env)):
-			pass
-		else:
-			debugLog("Setting up " + env)
-			os.system('virtualenv ' + env)
+			if (self.__checkDir(env)):
+				pass
+			else:
+				self.debugLog("Setting up " + env)
+				os.system('virtualenv ' + env)
 
-		debugLog("Activating virtual env")
-		execfile(envActivate, dict(__file__=envActivate))
-		debugLog("Virtual env active")
-		debugLog("Installing packages")
-		for package in packages:
-			os.system(package)
-		debugLog("Packages installed")
+			self.debugLog("Activating virtual env")
+			execfile(envActivate, dict(__file__=envActivate))
+			self.debugLog("Virtual env active")
+			self.debugLog("Installing packages")
+			for package in self.__packages:
+				os.system(package)
+			self.debugLog("Packages installed")
 
-		debugLog("Creating project")
-		os.chdir(server)
-		if (checkDir(project)):
-			debugLog("Project " + project + " already created")
-		else:
-			os.system('django-admin.py startproject ' + project)
-			debugLog("Project " + project + " created")
+			self.debugLog("Creating project")
+			os.chdir(self.__server)
+			if (self.__checkDir(self.__project)):
+				self.debugLog("Project " + self.__project + " already created")
+			else:
+				os.system('django-admin.py startproject ' + self.__project)
+				self.debugLog("Project " + self.__project + " created")
 
-		debugLog("Creating app")
-		os.chdir(project)
-		if (checkDir(app)):
-			debugLog("App " + app + " already created")
-		else:
-			os.system('python manage.py startapp ' + app)
-			debugLog("App " + app + " started")
+			self.debugLog("Creating app")
+			os.chdir(self.__project)
+			if (self.__checkDir(self.__app)):
+				self.debugLog("App " + self.__app + " already created")
+			else:
+				os.system('python manage.py startapp ' + self.__app)
+				self.debugLog("App " + self.__app + " started")
 
-		if (checkFile('__init__.py')):
-			debugLog("__init__.py already present")
-		else:
-			shutil.copyfile(app + "/__init__.py","__init__.py")
-			debugLog("__init__.py created")
+			if (self.__checkFile('__init__.py')):
+				self.debugLog("__init__.py already present")
+			else:
+				shutil.copyfile(self.__app + "/__init__.py","__init__.py")
+				self.debugLog("__init__.py created")
 
-	except Exception as e:
-		debugError("Setup Exception : ", e)
+		except Exception as e:
+			self.debugError("Setup Exception : ", e)
+			
+	def __setupSub(self):
+		thread.start_new_thread(self.__setup, ())
+	
+	def __runserver(self):
+		try :
+			env, envActivate = self.__getEnv()
+			os.chdir("../..")
+			self.debugLog("Activating Virtual env")
+			execfile(envActivate, dict(__file__=envActivate))
+			self.debugLog("Running server")
+			os.chdir(self.__server + '/' + self.__project)
+			os.system("python manage.py runserver")
+		except Exception as e:
+			self.debugError("Run Server Exception : ", e)
+			
+	def __runserverSub(self):
+		thread.start_new_thread(self.__runserver, ())
+		
+	def __stopserverFunc(self):
+		try:
+			self.debugLog("Stopping server")
+			os.kill(0, self.__stopserver)
+		except Exception as e:
+			self.debugError("Stop server Exception : ", e)
+		
+	def __createWidgets(self):
+		self.SETUPB = Button(self)
+		self.SETUPB["text"] = "Setup"
+		self.SETUPB["fg"] = "black"
+		self.SETUPB["command"] = self.__setupSub
+		self.SETUPB.pack({"side": "left"})
+		
+		self.RUNSERVER = Button(self)
+		self.RUNSERVER["text"] = "Run Server"
+		self.RUNSERVER["fg"] = "black"
+		self.RUNSERVER["command"] = self.__runserverSub
+		self.RUNSERVER.pack({"side": "left"})
+		
+		self.STOPSERVER = Button(self)
+		self.STOPSERVER["text"] = "Stop Server"
+		self.STOPSERVER["fg"] = "black"
+		self.STOPSERVER["command"] = self.__stopserverFunc
+		self.STOPSERVER.pack({"side": "left"})
+		
+		self.QUIT = Button(self)
+		self.QUIT["text"] = "Quit"
+		self.QUIT["fg"]   = "red"
+		self.QUIT["command"] =  self.quit
+		self.QUIT.pack({"side": "left"})
+		
+	def __init(self):
+		try:
+			self.__project = 'serverproject'
+			self.__app = 'app'
+			self.__server = 'server'
+			self.__envNt = 'envWin'
+			self.__envPosix = 'env'
+			self.__packages = [
+						'pip install django',
+						'pip install djangorestframework',
+						'pip install django-filter'
+					]
+
+			self.debugLog("System Info")
+			self.debugLog("OS: " + os.name + " " + str(platform.system()) + " " + str(platform.release()) + " " + str(platform.version()) + "\n")
+			
+			if (os.name == "nt"):
+				self.__env = self.__server + '/' + self.__envNt
+				self.__envActivate = self.__env + '/Scripts/activate_this.py'
+				self.__stopserver = signal.CTRL_BREAK_EVENT
+			elif os.name == "posix":
+				self.__env = self.__server + '/' + self.__envPosix
+				self.__envActivate = self.__env + '/bin/activate_this.py'
+				self.__stopserver = signal.CTRL_C_EVENT
+			
+		except Exception as e:
+			self.debugError("System Exception : ", e)
+			
+			
+	def __init__(self, master=None):
+		Frame.__init__(self, master)
+		self.pack()
+		self.__init()
+		self.__createWidgets()
+		
 
 
-def runserver():
-	env, envActivate = getEnv()
-	try :
-		os.chdir("../..")
-		debugLog("Activating Virtual env")
-		execfile(envActivate, dict(__file__=envActivate))
-		debugLog("Running server")
-		os.chdir(server + '/' + project)
-		os.system("python manage.py runserver")
-
-	except Exception as e:
-		debugError("Run Server Exception : ", e)
-
-
-
-def init():
-	top = Tkinter.Tk()
-	setupB = Tkinter.Button(top, text="Setup", width=10, command=setup)
-	runserverB = Tkinter.Button(top, text="Run server", width=10, command=runserver)
-	stopserverB = Tkinter.Button(top, text="Stop server", width=10, command=stopserver)
-	setupB.pack()
-	runserverB.pack()
-	stopserverB.pack()
-	top.mainloop()
-
-
-init()
-'''
-setup()
-runserver()
-'''
+root = Tk()
+myapp = ManageApp(master=root)
+myapp.master.title("Server Manager")
+myapp.master.minsize(400, 400)
+myapp.mainloop()
