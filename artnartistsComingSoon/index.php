@@ -50,13 +50,13 @@
 					$url = $url . $id;
 					destroySession();
 					include $SITE_FORMS . "/signup.html";
-					$emailObj->sendThankYouEmail($dbObj->deVal($email, $enK, true), $dbObj->deVal($name, $enK, true), $url, $sendMail);
+					$emailObj->sendThankYouEmail($dbObj->deVal($email, $enK, true), $dbObj->deVal($name, $enK, true), $url, $sendMail, $SITE_IMAGE_URL);
 				}
 				else {
 					$id = $result->{"results"}[0]->{$dbObj->enKey("userid")};
 					$url = $url . $id;
 					include $SITE_FORMS . "/signup.html";
-					$emailObj->sendThankYouEmail($dbObj->deVal($email, $enK, true), $dbObj->deVal($name, $enK, true), $url, $sendMail);
+					$emailObj->sendThankYouEmail($dbObj->deVal($email, $enK, true), $dbObj->deVal($name, $enK, true), $url, $sendMail, $SITE_IMAGE_URL);
 				}
 			}
 		}
