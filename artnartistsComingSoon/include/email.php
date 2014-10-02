@@ -13,7 +13,7 @@
 										<span style='font-size: 1.2em'>We will be here soon. Till then, share this URL with atleast 3 of your friends to get early access to the wall of fame.</span><br><br>
 										<span style='text-align: center'>" . $url . "</span><br><br>
 										<span>Regards</span><br>
-										<span>ArtnArtists Team</span>
+										<span>ArtinArtist Team</span>
 									</body>
 								</html>
 								";

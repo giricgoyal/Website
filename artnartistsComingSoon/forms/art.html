@@ -1,5 +1,5 @@
 	<body>
-		<form action="<?php echo $SITE_BASE_URL ?>/index.php" method="post"-->
+		<form action="<?php echo $SITE_BASE_URL ?>/index.php" id="signup" method="post"-->
 			<table class="paddingTable">
 				<tr><td></td></tr>
 			</table>
@@ -32,6 +32,64 @@
 				</tr>
 				<tr><td></td></tr>
 			</table>
+		</form>
+		<table class="paddingTable50">
+			<tr><td></td></tr>
+		<table>
+		<form action="<?php echo $SITE_BASE_URL ?>/index.php" id="contactus" method="post"-->
+			<table class="contactTable">
+				<tr>
+					<td colspan=2>
+						<span>Have anything to say? We are all ears.</span>
+					</td>
+				</tr>
+				<tr>
+					<td id="left">
+						<span>Your Name:</span>
+					</td>
+					<td id="right">
+						<input type="text" name="name" id="name" class="textinput" placeholder="Enter your name here" required/>
+					</td>
+				</tr>
+				<tr>
+					<td id="left">
+						<span>Your Email:</span>
+					</td>
+					<td id="right">
+						<input type="email" name="email" id="email" class="textinput" placeholder="Enter your email here" required/>
+					</td>
+				</tr>
+				<tr>
+					<td id="left">
+						<span>Subject:</span>
+					</td>
+					<td id="right">
+						<input type="email" name="email" id="email" class="textinput" placeholder="What is this about?" required/>
+					</td>
+				</tr>
+				<tr>
+					<td id="left">
+						<span>Message:</span>
+					</td>
+					<td id="right">
+						<textarea cols="4" rows="10" name="message" id="message" class="textarea" placeholder="Your message" required></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<input type="button" name="Submit" id="submitContactUs" class="button" placeholder="Submit" value="Submit"/>
+					</td>
+				</tr>
+				<tr><td><br></td></tr>
+				<tr>
+					<td colspan=2>
+						<span>Take this <a href="">survey</a>to help us serve you better.</span>
+					</td>
+				</tr>
+			</table>
+			<table class="paddingTable50">
+				<tr><td></td></tr>
+			<table>
 			<table class="socialTable">
 				<tr>
 					<td colspan=2><span>Visit us at:</span>&nbsp

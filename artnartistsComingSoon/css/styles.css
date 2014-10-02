@@ -63,6 +63,9 @@ html
   height: 400px;
 }
 
+.paddingTable50 {
+  height: 50px;
+}
 
 .mainBody {
   border: 0px white solid;
@@ -84,7 +87,7 @@ html
 
 .footer
 {
-  border: 0px solid white;
+	border: 0px solid white;
 	width: 960px;
 	margin-left: auto;
 	margin-right: auto;
@@ -166,11 +169,12 @@ html
 }
 
 .textinput {
-  width: 100%;
+  width: 90%;
   height: 30px;
   border: 0px;
   border-radius: 5px;
   padding-left: 10px;
+   padding-right: 10px;
   font-size: 0.8em;
   font-family: verdana;
 }
@@ -179,7 +183,19 @@ html
   box-shadow: 0px 0px 10px #ffde00;
 }
 
+.textarea {
+	height: 100px;
+	width: 90%;
+	border: 0px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.8em;
+  font-family: verdana;
+}
 
+.textarea:focus {
+  box-shadow: 0px 0px 10px #ffde00;
+}
 
 .button {
   height: 30px;
@@ -243,4 +259,35 @@ html
   background: url(../images/facebook.png);
   background-size: 40px 40px;
   display: block;
+}
+
+.contactTable {
+	background-color: #dedede;
+	border-radius: 5px;
+	width: 960px;
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.contactTable tr td {
+  text-align: center;
+  color: #1e1e1e;
+  font-size: 1em;
+  font-family: verdana;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.contactTable tr td#left {
+  text-align: right;
+  width: 20%;
+  
+}
+
+.contactTable tr td#right {
+  text-align: left;
+  width: 80%;
 }
