@@ -250,6 +250,7 @@ html
 .nolink {
   text-decoration: none;
   border: 0px;
+  color: blue;
 }
 
 .fbshare {
@@ -291,3 +292,4 @@ html
   text-align: left;
   width: 80%;
 }
+

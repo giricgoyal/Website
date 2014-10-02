@@ -15,8 +15,8 @@
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		include $SITE_FORMS . "/header.html";
-		if (isset($_POST["submit"])) {
+		//include $SITE_FORMS . "/header.html";
+		if (isset($_POST["signup"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
 				$name = $dbObj->enVal($_POST["name"], $enK, true);
 				$email = $dbObj->enVal($_POST["email"], $enK, true);
@@ -57,12 +57,37 @@
 				}
 			}
 		}
+		if (isset($_POST["submit"])) {
+			if ($_POST["nameC"] != "" && $_POST["emailC"] != "" && $_POST["subjectC"] != "" && $_POST["messageC"] != "") {
+				$name = $_POST["nameC"];
+				$email = $_POST["emailC"];
+				$subject = $_POST["subjectC"];
+				$message = $_POST["messageC"];
+				$status = $emailObj->sendUsMail($name, $email, $subject, $message, $MAIL_TO);
+				if ($status) {
+					?>
+						<script language="javascript" type="text/javascript">
+							alert('Thank you for contacting us. We will contact you shortly.');
+							window.location = '<?php echo $SITE_BASE_URL ?>';
+						</script>
+					<?php
+				}
+				else {
+					?>
+						<script language="javascript" type="text/javascript">
+							alert('We are experiencing some technical issues. Please contact directly to <?php $MAIL_TO ?>.');
+							window.location = '<?php echo $SITE_BASE_URL ?>';
+						</script>
+					<?php
+				}
+			}
+		}
 		else {
 			include $SITE_FORMS . "/art.html";
 		}
 
 	
-	include $SITE_FORMS . "/footer.html";
+	//include $SITE_FORMS . "/footer.html";
 	}
 	catch (Exception $e) {
 		echo "Caught: ", $e->getMessage(), "\n";

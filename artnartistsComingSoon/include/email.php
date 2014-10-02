@@ -40,5 +40,20 @@
 				}
 			}
 		}
+		
+		function sendUsMail($name, $email, $subject, $message, $mail_to) {
+			try {
+				$body_message = 'From: ' . $name . "\n";
+				$body_message .= 'E-Mail: ' . $email . "\n";
+				$body_message .= 'Message: ' . $message;
+				$headers = "From: " . $email . "\r\n";
+				$headers .= "Reply-To: " . $email . "\r\n";
+				$mail_status = mail($mail_to, $subject, $body_message, $headers);
+				return $mail_status;
+			}
+			catch (Exception $e) {
+				echo "Caught: " . $e->getMessage() . "\n";
+			}
+		}
 	}
 ?>

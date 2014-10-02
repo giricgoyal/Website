@@ -10,6 +10,8 @@
 	$sendMail = false;
 
 	$SITE_NAME			=	"artnartistsComingSoon";
+	
+	$MAIL_TO = "giricgoyal@gmail.com";
 
 	$SITE_IP = "localhost";
 	$SITE_ADDR = $SITE_IP . "/" . $SITE_NAME;
