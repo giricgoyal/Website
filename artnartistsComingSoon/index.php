@@ -8,15 +8,14 @@
 		
 		$currentpage = "art";
 		$url = $SITE_BASE_URL . "?";
-		if ((isset($_SESSION["name"])) && ($_SESSION["name"] == "")) {
+		if (isset($_SESSION["name"]) && $_SESSION["name"] == "") {
 			setQueryId($_SERVER['QUERY_STRING']);
 		}
 		
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		include $SITE_FORMS . "/header.html";
-		
+		//include $SITE_FORMS . "/header.html";
 		if (isset($_POST["submit"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
 				$name = $dbObj->enVal($_POST["name"], $enK, true);
@@ -25,13 +24,11 @@
 				$result = $dbObj->get($DB_SERVER_USER . "?". $dbObj->enKey("email") . "=" . $email);
 				if ($result == null) {
 					$requestId = getQueryId();
-					echo $requestId . "\n";
 					if ($requestId != "") {
 						$result = $dbObj->get($DB_SERVER_USER . "?" . $dbObj->enKey("userid") . "=" . $requestId);
 						if ($result != null) {
 							$frnds = intval($dbObj->deVal($result->{"results"}[0]->{$dbObj->enKey("friends")}, $enK, true)) + 1;
 							$frnds = strval($frnds);
-							echo $frnds . "\n";
 							$result->{"results"}[0]->{$dbObj->enKey("friends")} = $dbObj->enVal($frnds, $enK, true);
 							$serUrl = $result->{"results"}[0]->{$dbObj->enKey("url")};
 							$dbObj->put($serUrl, $result->{"results"}[0]);
@@ -65,7 +62,7 @@
 		}
 
 	
-	include $SITE_FORMS . "/footer.html";
+	//include $SITE_FORMS . "/footer.html";
 	}
 	catch (Exception $e) {
 		echo "Caught: ", $e->getMessage(), "\n";

@@ -7,7 +7,7 @@
 
 	$enK				=	"1s2dMKs1l0las7";
 	$encrypt = true;
-	$sendMail = true;
+	$sendMail = false;
 
 	$SITE_NAME			=	"artnartistsComingSoon";
 

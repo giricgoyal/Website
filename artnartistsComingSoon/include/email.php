@@ -1,5 +1,5 @@
 <?php
-	include "variables.php";
+	//include "variables.php";
 
 	class EmailClass {
 		function sendThankYouEmail($to, $name, $url, $send, $logoimage) {
