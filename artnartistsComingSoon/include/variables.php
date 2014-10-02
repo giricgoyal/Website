@@ -7,11 +7,13 @@
 
 	$enK				=	"1s2dMKs1l0las7";
 	$encrypt = true;
-	$sendMail = false;
+	$sendMail = true;
 
 	$SITE_NAME			=	"artnartistsComingSoon";
 	
-	$MAIL_TO = "giricgoyal@gmail.com";
+	$PARENT_CO = "Electech";
+	
+	$MAIL_TO = "artinartistofficial@gmail.com";
 
 	$SITE_IP = "localhost";
 	$SITE_ADDR = $SITE_IP . "/" . $SITE_NAME;

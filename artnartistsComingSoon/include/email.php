@@ -1,6 +1,5 @@
 <?php
-	//include "variables.php";
-
+	
 	class EmailClass {
 		function sendThankYouEmail($to, $name, $url, $send, $logoimage) {
 			if ($send) {
@@ -29,8 +28,8 @@
 							'host' => 'ssl://smtp.gmail.com',
 							'port' => '465',
 							'auth' => true,
-							'username' => 'artnartists0713@gmail.com',
-							'password' => 'artnartists07'
+							'username' => 'artinartistofficial@gmail.com',
+							'password' => 'artinartist0713'
 						));
 
 					$mail = $smtp->send($to, $headers, $message); 
@@ -46,9 +45,23 @@
 				$body_message = 'From: ' . $name . "\n";
 				$body_message .= 'E-Mail: ' . $email . "\n";
 				$body_message .= 'Message: ' . $message;
-				$headers = "From: " . $email . "\r\n";
-				$headers .= "Reply-To: " . $email . "\r\n";
-				$mail_status = mail($mail_to, $subject, $body_message, $headers);
+				$headers = array(
+					'From' => $email,
+					'To' => $mail_to,
+					'Subject' => $subject,
+					'Reply-To' => $email,
+					'Return-Path:' => $email
+					);
+				$smtp = Mail::factory('smtp', array(
+						'host' => 'ssl://smtp.gmail.com',
+						'port' => '465',
+						'auth' => true,
+						'username' => 'artinartistofficial@gmail.com',
+						'password' => 'artinartist0713'
+					));
+
+				$mail_status = $smtp->send($mail_to, $headers, $body_message) or die("Error");
+				
 				return $mail_status;
 			}
 			catch (Exception $e) {
