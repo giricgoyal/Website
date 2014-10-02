@@ -1,6 +1,7 @@
 <?php
 
 	include 'AES.php';
+	include 'hash.php';
 	
 	class dbClass {
 		// variables
@@ -165,6 +166,7 @@
 				$blockSize = 128;
 				$aes = new AES($imputText, $key, $blockSize);
 				$enc = $aes->encrypt();
+				$enc = rtrim(strtr(base64_encode($enc), '+/', '-_'), '=');
 				return $enc;
 			}
 			return $val;
@@ -172,6 +174,7 @@
 
 		function deVal($val, $key, $enc) {
 			if ($enc == True) {
+				$val = base64_decode(str_pad(strtr($val, '-_', '+/'), strlen($val) % 4, '=', STR_PAD_RIGHT)); 
 				$imputText = $val;
 				$blockSize = 128;
 				$aes = new AES($imputText, $key, $blockSize);

@@ -15,7 +15,7 @@
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		//include $SITE_FORMS . "/header.html";
+		include $SITE_FORMS . "/header.html";
 		if (isset($_POST["signup"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
 				$name = $dbObj->enVal($_POST["name"], $enK, true);
@@ -57,7 +57,7 @@
 				}
 			}
 		}
-		if (isset($_POST["submit"])) {
+		else if (isset($_POST["submit"])) {
 			if ($_POST["nameC"] != "" && $_POST["emailC"] != "" && $_POST["subjectC"] != "" && $_POST["messageC"] != "") {
 				$name = $_POST["nameC"];
 				$email = $_POST["emailC"];
@@ -87,7 +87,7 @@
 		}
 
 	
-	//include $SITE_FORMS . "/footer.html";
+	include $SITE_FORMS . "/footer.html";
 	}
 	catch (Exception $e) {
 		echo "Caught: ", $e->getMessage(), "\n";

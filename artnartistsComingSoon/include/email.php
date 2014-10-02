@@ -8,9 +8,10 @@
 					$message = "<html >
 									<body>
 										<img src='" . $logoimage . "/logo.png' alt='logo'/><br>
-										<span style='font-size: 2em; color: #101010'>Thank you for signing up, " . $name . "</span><br><br>
-										<span style='font-size: 1.2em'>We will be here soon. Till then, share this URL with atleast 3 of your friends to get early access to the wall of fame.</span><br><br>
-										<span style='text-align: center'>" . $url . "</span><br><br>
+										<span style='font-size: 2em; color: #101010;'>Thank you for signing up, " . $name . "</span><br><br>
+										<span style='font-size: 1.2em;'>We will be here soon. Till then, share this URL with atleast 3 of your friends to get early access to the wall of fame.</span><br><br>
+										<span style='text-align: center; text-size: 1.2em;'>" . $url . "</span><br><br>
+										<span style='font-size: 1.2em; text-decoration: none;'>Take our <a href='https://www.surveymonkey.com/s/2BQT8N3'>survey</a> to help us serve you better.</span><br><br>
 										<span>Regards</span><br>
 										<span>ArtinArtist Team</span>
 									</body>
