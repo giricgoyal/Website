@@ -15,7 +15,7 @@
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		include $SITE_FORMS . "/header.html";
+		//include $SITE_FORMS . "/header.html";
 		if (isset($_POST["signup"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
 				$name = $dbObj->enVal($_POST["name"], $enK, true);

@@ -293,3 +293,6 @@ html
   width: 80%;
 }
 
+.fb_iframe_widget span { width: 240px !important; }
+.fb-share-button iframe { width: 240px !important; }
+

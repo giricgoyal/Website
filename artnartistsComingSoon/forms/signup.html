@@ -1,4 +1,27 @@
 	<body>
+		<script>
+			  window.fbAsyncInit = function() {
+				FB.init({
+				  appId      : '387967684692863',
+				  xfbml      : true,
+				  version    : 'v2.1'
+				});
+			  };
+
+			  (function(d, s, id){
+				 var js, fjs = d.getElementsByTagName(s)[0];
+				 if (d.getElementById(id)) {return;}
+				 js = d.createElement(s); js.id = id;
+				 js.src = "//connect.facebook.net/en_US/sdk.js";
+				 fjs.parentNode.insertBefore(js, fjs);
+			   }(document, 'script', 'facebook-jssdk'));
+			   
+			   function popitup(url) {
+					newwindow=window.open(url,'name','height=400,width=600');
+					if (window.focus) {newwindow.focus()}
+					return false;
+				}
+		</script>
 		<form action="<?php echo $SITE_BASE_URL ?>/index.php" method="post"-->
 			<table class="paddingTable">
 				<tr><td></td></tr>
@@ -42,17 +65,13 @@
 						<a id="noLink" href="https://twitter.com/intent/tweet?text=Signup%20for%20@art_n_artists.%20I%20just%20did%20<?php echo $url?>" data-related="art_n_artists" target="_blank">
 							<img src="<?php echo $SITE_IMAGE_URL?>/Twitter.png" class="scaleShare"/>
 						</a>&nbsp
-
-						<script>
-						    function fbShare(url, title, descr, image, winWidth, winHeight) {
-						        var winTop = (screen.height / 2) - (winHeight / 2);
-						        var winLeft = (screen.width / 2) - (winWidth / 2);
-						        window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
-						    }
-						</script>
-						<a href="javascript:fbShare('<?php echo $url?>', 'Fb Share', 'Join', '', 520, 350)">
+						
+						<!--a href='https://www.facebook.com/dialog/share_open_graph?app_id=387967684692863&display=popup&action_type=og.likes&action_properties=%7B%22object%22%3A%22<?php echo rawurlencode($url) ?>%22%7D&redirect_uri=<?php echo rawurlencode($url) ?>'>
 							<img src="<?php echo $SITE_IMAGE_URL?>/Facebook.png" class="scaleShare"/>
-						</a>
+						</a	-->
+						
+						<a href="popupex.html" onclick="return popitup('https://www.facebook.com/dialog/share_open_graph?app_id=387967684692863&display=popup&action_type=og.likes&action_properties=%7B%22object%22%3A%22<?php echo rawurlencode($url) ?>%22%7D&redirect_uri=<?php echo rawurlencode($url) ?> ')">
+						<img src="<?php echo $SITE_IMAGE_URL?>/Facebook.png" class="scaleShare"/></a>
 					</td>
 				</tr>
 				<tr><td></td></tr>
