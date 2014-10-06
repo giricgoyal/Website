@@ -4,7 +4,6 @@
 		include $SITE_INCLUDE . "/session.php";
 		include $SITE_INCLUDE . "/db.php";
 		include $SITE_INCLUDE . "/email.php";
-		require_once "Mail.php";
 		
 		$currentpage = "art";
 		$url = $SITE_BASE_URL . "?";
@@ -15,7 +14,8 @@
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		//include $SITE_FORMS . "/header.html";
+		echo $SITE_CSS_URL;
+		include $SITE_FORMS . "/header.html";
 		if (isset($_POST["signup"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
 				$name = $dbObj->enVal($_POST["name"], $enK, true);
