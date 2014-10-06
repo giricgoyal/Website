@@ -14,7 +14,6 @@
 		$dbObj = new dbClass();
 		$emailObj = new EmailClass();
 
-		echo $SITE_CSS_URL;
 		include $SITE_FORMS . "/header.html";
 		if (isset($_POST["signup"])) {
 			if ($_POST["name"] != "" && $_POST["email"] != "") {
