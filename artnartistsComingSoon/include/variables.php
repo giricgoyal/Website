@@ -10,12 +10,16 @@
 	$sendMail = false;
 
 	$SITE_NAME			=	"ArtinArtist";
+	$SITE_DOCUMENT = "ArtnArtistsComingSoon";
 	
 	$PARENT_CO = "SilicoSense";
 	
 	$MAIL_TO = "artinartistofficial@gmail.com";
-
-	$SITE_ADDR = $_SERVER['SERVER_NAME'];
+	$SITE_ADDR = $_SERVER['SERVER_NAME'] . "/" . $SITE_DOCUMENT;
+	
+	if ($_SERVER['SERVER_NAME'] != "localhost") {
+		$SITE_ADDR = $_SERVER['SERVER_NAME'];
+	}
 	
 	$DB_SERVER			= 	"http://127.0.0.1:8000";
 	$DB_SERVER_USER		=	$DB_SERVER . "/useraccount/";
